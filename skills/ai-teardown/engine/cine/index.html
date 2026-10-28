@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>代码成片 · 讲解课</title>
+<style>
+@font-face { font-family: "NotoSC"; src: url(fonts/NotoSansSC-VF.ttf); font-weight: 100 900; }
+@font-face { font-family: "Geist"; src: url(fonts/Geist-VF.ttf); font-weight: 100 900; }
+@font-face { font-family: "GeistMono"; src: url(fonts/GeistMono-VF.ttf); font-weight: 100 900; }
+html, body { margin: 0; background: #050507; overflow: hidden; }
+#frame { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; background: #060609; transform-origin: 0 0; }
+#cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+#gl { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+#ui { position: absolute; inset: 0; font-family: "Geist", "NotoSC", sans-serif; color: #F4F0E8; -webkit-font-smoothing: antialiased; }
+#ui * { box-sizing: border-box; }
+.shot { position: absolute; inset: 0; display: none; }
+.abs { position: absolute; }
+.mono { font-family: "GeistMono", "NotoSC", monospace; }
+.cn { font-family: "NotoSC", "Geist", sans-serif; }
+</style>
+<script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<div id="frame"><div id="cam"><canvas id="gl" width="1920" height="1080"></canvas><div id="ui"></div></div></div>
+<script type="module" src="engine/core.js"></script>
+</body>
+</html>

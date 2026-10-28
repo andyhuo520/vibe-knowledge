@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-teardown.local/schemas/concepts.schema.json",
+  "title": "concepts.json · 知识建模",
+  "description": "总图、概念与先修关系、常见误区、学习目标。第 4 步产出。",
+  "type": "object",
+  "required": ["archetype", "master_map", "concepts", "objectives"],
+  "additionalProperties": false,
+  "properties": {
+    "archetype": { "enum": ["agent", "llm", "reasoning", "generative-media", "voice", "protocol"] },
+    "master_map": {
+      "type": "object",
+      "required": ["nodes", "edges"],
+      "additionalProperties": false,
+      "properties": {
+        "nodes": { "type": "array", "items": { "$ref": "#/$defs/node" }, "minItems": 2 },
+        "edges": { "type": "array", "items": { "$ref": "#/$defs/edge" } }
+      }
+    },
+    "concepts": { "type": "array", "items": { "$ref": "#/$defs/concept" }, "minItems": 1 },
+    "misconceptions": { "type": "array", "items": { "$ref": "#/$defs/misconception" } },
+    "objectives": { "type": "array", "items": { "$ref": "#/$defs/objective" }, "minItems": 3 }
+  },
+  "$defs": {
+    "factRefs": { "type": "array", "items": { "type": "string", "pattern": "^F\\d{3}$" } },
+    "honesty": { "enum": ["official", "inferred", "undisclosed"] },
+    "node": {
+      "type": "object",
+      "required": ["id", "label", "role"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z][a-z0-9_-]*$" },
+        "label": { "type": "string", "maxLength": 12 },
+        "role": { "enum": ["user", "model", "tool", "env", "boundary"] },
+        "parent": { "type": "string", "description": "推进一层后，它所在的父节点 id；顶层节点不写" },
+        "honesty": { "$ref": "#/$defs/honesty" },
+        "facts": { "$ref": "#/$defs/factRefs" }
+      }
+    },
+    "edge": {
+      "type": "object",
+      "required": ["from", "to", "label"],
+      "additionalProperties": false,
+      "properties": {
+        "from": { "type": "string" },
+        "to": { "type": "string" },
+        "label": { "type": "string", "maxLength": 10, "description": "箭头上的动作，如 调用、返回输出" },
+        "honesty": { "$ref": "#/$defs/honesty" },
+        "facts": { "$ref": "#/$defs/factRefs" }
+      }
+    },
+    "concept": {
+      "type": "object",
+      "required": ["id", "term", "plain", "level", "prereqs", "facts"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^C\\d{2}$" },
+        "term": { "type": "string", "description": "术语，如 Agent 循环" },
+        "plain": { "type": "string", "maxLength": 40, "description": "一句大白话" },
+        "analogy": { "type": "string" },
+        "level": { "enum": ["L0", "L1", "L2", "L3", "L4", "L5"] },
+        "node": { "type": "string", "description": "对应总图节点 id" },
+        "prereqs": { "type": "array", "items": { "type": "string", "pattern": "^C\\d{2}$" } },
+        "facts": { "$ref": "#/$defs/factRefs" }
+      }
+    },
+    "misconception": {
+      "type": "object",
+      "required": ["id", "myth", "truth", "facts"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^M\\d{2}$" },
+        "myth": { "type": "string" },
+        "truth": { "type": "string" },
+        "facts": { "$ref": "#/$defs/factRefs" }
+      }
+    },
+    "objective": {
+      "type": "object",
+      "required": ["id", "question", "answer", "concepts"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^Q\\d{2}$" },
+        "question": { "type": "string", "description": "冷读盲测用的问题，只看讲稿与关键帧就应能答出" },
+        "answer": { "type": "string" },
+        "concepts": { "type": "array", "items": { "type": "string", "pattern": "^C\\d{2}$" }, "minItems": 1 }
+      }
+    }
+  }
+}

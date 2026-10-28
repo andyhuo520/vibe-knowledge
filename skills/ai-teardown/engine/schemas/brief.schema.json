@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-teardown.local/schemas/brief.schema.json",
+  "title": "brief.json · 立项",
+  "description": "讲哪个 AI、给谁看、多长、什么画幅与配音。第 1 步产出，后面所有步骤都读它。",
+  "type": "object",
+  "required": ["subject", "audience", "duration_s", "aspects", "language", "voice", "theme", "as_of"],
+  "additionalProperties": false,
+  "properties": {
+    "subject": {
+      "type": "object",
+      "required": ["name", "resolved", "archetype"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "description": "用户输入的名字，如 Codex" },
+        "resolved": { "type": "string", "description": "消歧后的实体全称与范围" },
+        "not": { "type": "array", "items": { "type": "string" }, "description": "明确排除的同名实体" },
+        "vendor": { "type": "string" },
+        "version_anchor": { "type": "string", "description": "讲的是哪个版本或哪一代模型" },
+        "archetype": { "enum": ["agent", "llm", "reasoning", "generative-media", "voice", "protocol"] }
+      }
+    },
+    "audience": { "enum": ["novice", "tech-literate", "developer"], "description": "默认 tech-literate：懂点技术的非开发者" },
+    "duration_s": { "type": "integer", "minimum": 30, "maximum": 1200 },
+    "depth_ceiling": { "enum": ["L2", "L3", "L4", "L5"], "default": "L4" },
+    "aspects": { "type": "array", "items": { "enum": ["16:9", "9:16"] }, "minItems": 1, "uniqueItems": true },
+    "fps": { "enum": [24, 30, 60], "default": 30 },
+    "language": { "enum": ["zh-CN", "en-US"] },
+    "voice": {
+      "type": "object",
+      "required": ["engine", "id"],
+      "additionalProperties": false,
+      "properties": {
+        "engine": { "enum": ["edge-tts", "mimo", "elevenlabs", "openai", "say", "file"] },
+        "id": { "type": "string", "description": "音色 id，如 zh-CN-YunxiNeural" },
+        "rate": { "type": "string", "pattern": "^[+-]\\d{1,2}%$", "description": "edge-tts 语速偏移，如 -5%" },
+        "lexicon": { "type": "string", "description": "读音词典路径" }
+      }
+    },
+    "theme": { "enum": ["blueprint", "editorial", "chalk"] },
+    "bpm": { "type": "number", "minimum": 60, "maximum": 180 },
+    "as_of": { "type": "string", "format": "date" },
+    "materials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path"],
+        "additionalProperties": false,
+        "properties": { "path": { "type": "string" }, "note": { "type": "string" } }
+      }
+    },
+    "interactive": { "enum": ["none", "sync", "lab"], "default": "sync" },
+    "auto": { "type": "boolean", "default": false, "description": "true 时跳过三个确认点" }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-teardown.local/schemas/facts.schema.json",
+  "title": "facts.json · 事实账本",
+  "description": "原子事实，一条只说一件事，每条挂原文摘录。第 3 步产出；讲稿和画面只能引用这里的事实。",
+  "type": "object",
+  "required": ["as_of", "facts"],
+  "additionalProperties": false,
+  "properties": {
+    "as_of": { "type": "string", "format": "date" },
+    "facts": { "type": "array", "items": { "$ref": "#/$defs/fact" }, "minItems": 1 }
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "required": ["source", "quote"],
+      "additionalProperties": false,
+      "properties": {
+        "source": { "type": "string", "pattern": "^S\\d{2,3}$" },
+        "quote": { "type": "string", "minLength": 1, "maxLength": 400 },
+        "where": { "type": "string", "description": "小节名、行号或时间码" }
+      }
+    },
+    "fact": {
+      "type": "object",
+      "required": ["id", "claim", "category", "status", "evidence"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^F\\d{3}$" },
+        "claim": { "type": "string", "minLength": 4, "maxLength": 80, "description": "一句中文原子事实，建议 60 字以内" },
+        "category": { "enum": ["what", "how", "why", "limit", "number", "date", "name", "compare", "ui"] },
+        "status": { "enum": ["verified", "single-source", "conflict", "inferred", "undisclosed"] },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } },
+        "numbers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["value"],
+            "additionalProperties": false,
+            "properties": { "value": { "type": "string" }, "unit": { "type": "string" } }
+          }
+        },
+        "terms": { "type": "array", "items": { "type": "string" }, "description": "专有名词，供读音词典与逐字核对" },
+        "as_of": { "type": "string", "format": "date" },
+        "supersedes": { "type": "string", "pattern": "^F\\d{3}$" },
+        "notes": { "type": "string" }
+      },
+      "if": { "properties": { "status": { "const": "undisclosed" } } },
+      "then": { "properties": { "evidence": { "minItems": 0 } } },
+      "else": { "properties": { "evidence": { "minItems": 1 } } }
+    }
+  }
+}

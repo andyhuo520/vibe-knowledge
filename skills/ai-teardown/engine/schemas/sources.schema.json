@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-teardown.local/schemas/sources.schema.json",
+  "title": "sources.json · 信源登记",
+  "description": "每个来源一条，带等级、读法和快照。第 2 步产出。",
+  "type": "object",
+  "required": ["as_of", "sources"],
+  "additionalProperties": false,
+  "properties": {
+    "as_of": { "type": "string", "format": "date" },
+    "sources": { "type": "array", "items": { "$ref": "#/$defs/source" }, "minItems": 1 }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["id", "tier", "kind", "title", "publisher", "locator", "fetched_at", "fetch_method", "snapshot"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^S\\d{2,3}$" },
+        "tier": { "enum": ["U", "T1", "T2", "T3"] },
+        "kind": { "enum": ["product-page", "docs", "blog", "changelog", "repo", "code", "paper", "system-card", "video", "social", "media", "help-center", "local-output", "user-file"] },
+        "title": { "type": "string" },
+        "publisher": { "type": "string" },
+        "locator": { "type": "string", "description": "URL，或本地路径 / 命令" },
+        "published_at": { "type": ["string", "null"], "description": "YYYY-MM-DD，未知写 null" },
+        "fetched_at": { "type": "string", "description": "ISO 8601 时间" },
+        "fetch_method": { "enum": ["browser", "api", "raw", "curl", "jina", "firecrawl", "transcript", "local", "user"] },
+        "snapshot": { "type": "string", "description": "相对 research/ 的快照路径，如 snapshots/S01.md" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "lang": { "type": "string" },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.log
+skills/vibe-knowledge/tools/ocr
+skills/vibe-knowledge/tools/bin/

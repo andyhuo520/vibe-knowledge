@@ -1,0 +1,14 @@
+{
+ "_how": "知识大赏默认配乐（用户 2026-10-28 指定，用户自备曲目）。节拍网格用 librosa 实测：beat_k = t0 + k*beat，强拍相位 0（每 4 拍一小节）。tools/fit_bgm.py 读这份数据按片长裁剪 / 循环，切点全部落在小节线上。",
+ "file": "vibe-bgm.m4a",
+ "duration": 160.09,
+ "bpm": 112.9,
+ "t0": 0.1176,
+ "beat": 0.53142,
+ "beats_per_bar": 4,
+ "loudness_lufs": -13.0,
+ "energy": "全程平稳（-11 ~ -15 dB / 5 秒窗），无长前奏；157 秒起自然淡出，158.5 秒后近乎无声",
+ "tail_bar": 70,
+ "loop_bars": [8, 70],
+ "phrase_bars": 8
+}

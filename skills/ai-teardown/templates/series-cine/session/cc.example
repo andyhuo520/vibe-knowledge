@@ -1,0 +1,11 @@
+#!/bin/zsh
+# 录课专用的 Claude Code 启动脚本（示例）：清空环境变量后只留基本项，独立配置目录，关自动更新。
+# 这样日常配置里的模型路由（ANTHROPIC_BASE_URL 之类）不会带进录课实例，录到的就是官方模型本身。
+# 用法：复制成 ~/claude-course/cc，chmod +x，在 session.env 里写 SESSION_CC=~/claude-course/cc、SESSION_CONFIG=~/claude-course/config。
+# 第一次运行会要求登录：登录和授权码由用户本人在终端里输入。
+P="${HTTPS_PROXY:-}"
+exec env -i HOME="$HOME" USER="$USER" SHELL="${SHELL:-/bin/zsh}" TERM="${TERM:-xterm-256color}" LANG=zh_CN.UTF-8 \
+  PATH="$HOME/claude-course/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin" \
+  ${P:+HTTPS_PROXY="$P"} ${P:+HTTP_PROXY="$P"} NO_PROXY="localhost,127.0.0.1,::1,.local" \
+  CLAUDE_CONFIG_DIR="$HOME/claude-course/config" DISABLE_AUTOUPDATER=1 \
+  "$HOME/claude-course/bin/claude" "$@"

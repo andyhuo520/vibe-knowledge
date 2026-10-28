@@ -1,0 +1,363 @@
+{
+  "title": "Opus 5.5 宣传片实战课：从一句话到成片",
+  "author": "@Berryxia",
+  "status": "draft",
+  "status_label": "全部上线",
+  "tagline": "跟着一次真实会话，把一句话变成一支 30 秒宣传片；拆我们交付过的 24 个项目和 5 支行业概念片，学会选型、分镜、动效、镜头、声音和质检。",
+  "facts": [
+    {
+      "k": "对象",
+      "v": "想用 Claude Code 给自己的产品、账号、门店做宣传片的人；默认已装好 Claude Code"
+    },
+    {
+      "k": "课时",
+      "v": "导学 + 8 节，每节 4–6 分钟"
+    },
+    {
+      "k": "主角",
+      "v": "Claude Opus 5.5 + promo-video skill（宣传片流水线）"
+    },
+    {
+      "k": "两条路线",
+      "v": "promo-video skill（Remotion）· 纯网页代码（Three.js / Canvas，逐帧录制）"
+    },
+    {
+      "k": "案例",
+      "v": "交付过的 24 个项目（只用最终版本，客户同意展示）+ 5 支行业概念片（茶饮·喜茶、百货·无印良品、零售·盒马、制造业·比亚迪、电商·京东，非官方）+ 一次完整录下的真实会话"
+    },
+    {
+      "k": "资料",
+      "v": "promo-video 文档、Remotion / HyperFrames 官方仓库与授权、Mixkit 曲库授权、Anthropic 发布页"
+    },
+    {
+      "k": "真实会话",
+      "v": "5 轮对话、48 次模型调用、52 次工具调用，它干活约 16 分钟，按 API 价折算 3.38 美元"
+    }
+  ],
+  "map_sub": "按做一支片的顺序走：先想清楚，再做出来，最后交出去。先看导学。",
+  "stages": [
+    {
+      "name": "导学 · 先看成片",
+      "range": "第 0 节",
+      "color": "m5",
+      "get": "看完 24 个交付项目和 5 支行业概念片的高光，知道这门课教什么、两条路线怎么选"
+    },
+    {
+      "name": "A · 想清楚",
+      "range": "第 1–3 节",
+      "color": "m2",
+      "get": "会搭一支宣传片的骨架、从官网拿素材、写选型卡"
+    },
+    {
+      "name": "B · 做出来",
+      "range": "第 4–7 节",
+      "color": "m4",
+      "get": "会排分镜和节拍、叠动效、设计镜头、配声音"
+    },
+    {
+      "name": "C · 交出去",
+      "range": "第 8 节",
+      "color": "m3",
+      "get": "会质检、交付、改版，看完一次真实会话的全程"
+    }
+  ],
+  "lessons_heading": "课程大纲",
+  "lessons_sub": "每节先用真实成片来一段高光开场，再拆它为什么好、提示词怎么说，最后看真实会话里对应的那一步。",
+  "lessons": [
+    {
+      "n": 0,
+      "title": "导学：一句话到成片",
+      "hook": "24 个交付项目 + 5 支行业概念片，一门课讲清楚",
+      "minutes": "3",
+      "intro": "先看我们用 Opus 5.5 做过的宣传片高光，按行业分：AI 产品、社区与个人品牌、茶饮餐饮、百货、零售、制造业、电商、文旅生活；再看两条路线、八节课和一次贯穿全程的真实会话。",
+      "points": [
+        "这门课教什么、适合谁",
+        "按行业看片：交付项目 + 五支非官方行业概念片",
+        "两条路线：promo-video skill 与纯网页代码",
+        "贯穿全课的真实会话：给「圈问」做 30 秒片"
+      ],
+      "visual": [
+        "高光快剪",
+        "课程地图"
+      ],
+      "sources": [
+        "promo",
+        "remotion",
+        "hyperframes"
+      ],
+      "video": "lessonp00.mp4",
+      "poster": "lessonp00.jpg",
+      "length": "2 分 49 秒"
+    },
+    {
+      "n": 1,
+      "title": "一支宣传片的骨架",
+      "hook": "前三秒留人，最后两秒记住",
+      "minutes": "5",
+      "intro": "好的宣传片都是同一副骨架：钩子、价值、卖点、证明、行动。按时长定场景数和每屏字数，再把第一句提示词说对。",
+      "points": [
+        "钩子 → 价值 → 卖点 → 证明 → 行动",
+        "时长档位、场景数与每屏字数",
+        "两条路线怎么选，第一句话怎么说"
+      ],
+      "visual": [
+        "成片拆成骨架条",
+        "第一句提示词"
+      ],
+      "sources": [
+        "promo",
+        "remotion"
+      ],
+      "video": "lessonp01.mp4",
+      "poster": "lessonp01.jpg",
+      "length": "4 分 12 秒"
+    },
+    {
+      "n": 2,
+      "title": "从官网拿素材",
+      "hook": "给它一个网址，Logo、配色、截图自己拿",
+      "minutes": "5",
+      "intro": "只给网址时，它怎么拿到文案、配色、字体、Logo 和高清产品图；哪些能直接用，哪些必须先问你。",
+      "points": [
+        "文案与卖点：原话优先，数字要确认",
+        "配色、字体、Logo：算出来，不是猜出来",
+        "产品图、官网视频，缺什么就问"
+      ],
+      "visual": [
+        "官网拆成素材板",
+        "改前改后"
+      ],
+      "sources": [
+        "promo"
+      ],
+      "video": "lessonp02.mp4",
+      "poster": "lessonp02.jpg",
+      "length": "4 分 34 秒"
+    },
+    {
+      "n": 3,
+      "title": "选型卡：四层只选一次",
+      "hook": "不是功能越多越好，是每层只选一个",
+      "minutes": "5",
+      "intro": "模式、视觉基调、叙事骨架、增强层，四层各选一个写成选型卡；再用真实的客户反馈决定什么该做、什么别做。",
+      "points": [
+        "四层选型与选型卡",
+        "按信号推荐",
+        "口碑记录：真实反馈怎么改变下一支片"
+      ],
+      "visual": [
+        "四个转轮锁定选型卡",
+        "同一产品四个版本"
+      ],
+      "sources": [
+        "promo"
+      ],
+      "video": "lessonp03.mp4",
+      "poster": "lessonp03.jpg",
+      "length": "4 分 30 秒"
+    },
+    {
+      "n": 4,
+      "title": "分镜和节拍",
+      "hook": "切点跟着鼓点走",
+      "minutes": "5",
+      "intro": "分镜表每一列在管什么；屏幕字读不读得完怎么算；选曲以后，整条时间轴为什么要按曲子的 BPM 重排。",
+      "points": [
+        "分镜表：时长、画面、屏幕字、运镜、主手艺与转场",
+        "阅读速度与快慢呼吸",
+        "选曲对拍：BPM 网格与能量到达点"
+      ],
+      "visual": [
+        "波形与切点",
+        "分镜表落成画面"
+      ],
+      "sources": [
+        "promo",
+        "mixkit"
+      ],
+      "video": "lessonp04.mp4",
+      "poster": "lessonp04.jpg",
+      "length": "4 分 34 秒"
+    },
+    {
+      "n": 5,
+      "title": "动效层：特效长在产品上",
+      "hook": "粒子在截图上聚成口号",
+      "minutes": "5",
+      "intro": "先铺真素材，再把粒子、变形、遮罩叠在素材上；三个档位、一张手艺地图，和用户说「不够炫」时的加码顺序。",
+      "points": [
+        "素材优先，动效叠在素材上",
+        "三个档位与手艺地图",
+        "转场、首尾呼应与「不够炫」加码"
+      ],
+      "visual": [
+        "粒子聚成口号",
+        "匹配剪辑"
+      ],
+      "sources": [
+        "promo",
+        "lucide"
+      ],
+      "video": "lessonp05.mp4",
+      "poster": "lessonp05.jpg",
+      "length": "4 分 52 秒"
+    },
+    {
+      "n": 6,
+      "title": "镜头与设备",
+      "hook": "每一次运镜都要有理由",
+      "minutes": "5",
+      "intro": "推轨、慢推、环绕、穿越、焦点转移、甩镜、猛推、锁定；什么时候镜头该动、什么时候必须静；3D 设备和一镜到底怎么做。",
+      "points": [
+        "导演运镜表",
+        "运镜规则：一种主运动、CTA 静稳、只在关键帧推",
+        "3D 设备、一镜到底与纯代码 3D"
+      ],
+      "visual": [
+        "3D 画廊穿越",
+        "三屏设备"
+      ],
+      "sources": [
+        "promo",
+        "three"
+      ],
+      "video": "lessonp06.mp4",
+      "poster": "lessonp06.jpg",
+      "length": "5 分 4 秒"
+    },
+    {
+      "n": 7,
+      "title": "声音：配乐、音效、旁白",
+      "hook": "声音落在接触帧",
+      "minutes": "5",
+      "intro": "曲库怎么选、授权能做什么不能做什么；音效为什么要落在接触帧、全片只有两处最响；旁白和母带怎么处理。",
+      "points": [
+        "曲库与授权",
+        "音效：接触帧、变体轮换、两处最响",
+        "旁白、避让与母带"
+      ],
+      "visual": [
+        "音轨分层亮起",
+        "响度表"
+      ],
+      "sources": [
+        "promo",
+        "mixkit"
+      ],
+      "video": "lessonp07.mp4",
+      "poster": "lessonp07.jpg",
+      "length": "5 分 6 秒"
+    },
+    {
+      "n": 8,
+      "title": "质检、交付与改版",
+      "hook": "一句话进去，30 秒成片出来",
+      "minutes": "6",
+      "intro": "交付前的大师审片清单、合规底线、交付规格；改版怎么改、口碑怎么记；最后从头到尾看完那次真实会话和它的用量。",
+      "points": [
+        "大师审片与精确取帧",
+        "合规与交付",
+        "改版、口碑记录 + 真实会话全程"
+      ],
+      "visual": [
+        "接触表质检",
+        "真实会话回放"
+      ],
+      "sources": [
+        "promo",
+        "opus55",
+        "cc"
+      ],
+      "video": "lessonp08.mp4",
+      "poster": "lessonp08.jpg",
+      "length": "5 分 10 秒"
+    }
+  ],
+  "sources_sub": "主要来源；每节片尾逐条标注出处。",
+  "sources": [
+    {
+      "id": "promo",
+      "tier": "T1",
+      "publisher": "@Berryxia",
+      "title": "promo-video skill 文档与交付记录（本课程作者自建）",
+      "url": ""
+    },
+    {
+      "id": "remotion",
+      "tier": "T1",
+      "publisher": "Remotion",
+      "title": "Remotion 官方仓库与授权说明",
+      "url": "https://github.com/remotion-dev/remotion"
+    },
+    {
+      "id": "hyperframes",
+      "tier": "T1",
+      "publisher": "HeyGen",
+      "title": "HyperFrames（Apache-2.0）",
+      "url": "https://github.com/heygen-com/hyperframes"
+    },
+    {
+      "id": "three",
+      "tier": "T1",
+      "publisher": "three.js",
+      "title": "three.js（MIT）",
+      "url": "https://threejs.org"
+    },
+    {
+      "id": "mixkit",
+      "tier": "T1",
+      "publisher": "Mixkit",
+      "title": "Mixkit Stock Music Free License",
+      "url": "https://mixkit.co/license/"
+    },
+    {
+      "id": "lucide",
+      "tier": "T1",
+      "publisher": "Lucide",
+      "title": "Lucide 图标（ISC）",
+      "url": "https://lucide.dev"
+    },
+    {
+      "id": "opus55",
+      "tier": "T1",
+      "publisher": "Anthropic",
+      "title": "Introducing Claude Opus 5.5（2026-09-22）",
+      "url": "https://www.anthropic.com/claude-opus-5-5"
+    },
+    {
+      "id": "cc",
+      "tier": "T1",
+      "publisher": "Anthropic",
+      "title": "Claude Code 官方文档",
+      "url": "https://code.claude.com/docs"
+    },
+    {
+      "id": "brands",
+      "tier": "T1",
+      "publisher": "各品牌官网",
+      "title": "行业概念片的素材与文案来源（喜茶、无印良品、盒马、比亚迪、京东官网）；概念片为非官方课程演示",
+      "url": ""
+    }
+  ],
+  "footer": "制作于 2026-10。交付过的宣传片均为真实作品，经客户同意展示；行业概念片为非官方课程演示，片尾均有声明；「圈问」是课程演示用的虚构产品。",
+  "sample": {
+    "heading": "先看这个：一句话做出来的 30 秒片",
+    "sub": "课程里那次真实会话的成片：给虚构产品「圈问」做的 30 秒宣传片，第一句话只有一句。",
+    "video": "sample.mp4",
+    "poster": "sample.jpg",
+    "changes": [
+      {
+        "k": "第一句话",
+        "v": "用 promo-video 给圈问做一支 30 秒宣传片，官网 http://127.0.0.1:8930。"
+      },
+      {
+        "k": "五轮",
+        "v": "素材分析与选型卡 → 样帧（自己挑出 4 个问题）→ 成片 → 前台重渲与核对 → 改钩子"
+      },
+      {
+        "k": "声明",
+        "v": "圈问是课程演示用的虚构产品；配乐 Techno Fest Vibes（Mixkit 免费授权）"
+      }
+    ]
+  }
+}

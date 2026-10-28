@@ -1,0 +1,316 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-teardown.local/schemas/lesson.schema.json",
+  "title": "lesson.json · 教案（唯一源文件）",
+  "description": "章节与 beat。旁白、上屏关键词、原语与参数、出处都在这里；视频与课件都由它编译。第 5 步产出，配音后回填 audio。",
+  "type": "object",
+  "required": [
+    "meta",
+    "chapters",
+    "beats"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "title",
+        "subject",
+        "as_of",
+        "aspect",
+        "fps",
+        "theme",
+        "voice"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "string",
+          "format": "date"
+        },
+        "aspect": {
+          "enum": [
+            "16:9",
+            "9:16"
+          ]
+        },
+        "fps": {
+          "enum": [
+            24,
+            30,
+            60
+          ]
+        },
+        "theme": {
+          "enum": [
+            "blueprint",
+            "editorial",
+            "chalk"
+          ]
+        },
+        "voice": {
+          "type": "string"
+        },
+        "bpm": {
+          "type": "number"
+        },
+        "pace_cps": {
+          "type": "number",
+          "minimum": 2.5,
+          "maximum": 5,
+          "default": 3.5,
+          "description": "目标语速，字/秒"
+        }
+      }
+    },
+    "chapters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/chapter"
+      },
+      "minItems": 1
+    },
+    "beats": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/beat"
+      },
+      "minItems": 1
+    }
+  },
+  "$defs": {
+    "factRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^F\\d{3}$"
+      }
+    },
+    "chapter": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "level",
+        "beats"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^CH\\d{2}$"
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 16
+        },
+        "level": {
+          "enum": [
+            "L0",
+            "L1",
+            "L2",
+            "L3",
+            "L4",
+            "L5",
+            "R"
+          ]
+        },
+        "focus_node": {
+          "type": "string",
+          "description": "这一章镜头推进到总图的哪个节点"
+        },
+        "beats": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^B\\d{3}$"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "cue": {
+      "type": "object",
+      "required": [
+        "name",
+        "action"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*$",
+          "description": "对应旁白里的 [[name]] 标记"
+        },
+        "action": {
+          "type": "string",
+          "description": "原语钩子，如 reveal:model、press、state:3"
+        }
+      }
+    },
+    "visual": {
+      "type": "object",
+      "required": [
+        "primitive"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "primitive": {
+          "enum": [
+            "SystemMap",
+            "Pipeline",
+            "Loop",
+            "Terminal",
+            "ChatUI",
+            "CodeDiff",
+            "Cursor",
+            "Sandbox",
+            "Analogy",
+            "Compare",
+            "Metric",
+            "ConceptMap",
+            "Morph",
+            "Sequence",
+            "Timeline",
+            "Layers",
+            "Exploded",
+            "TokenStream",
+            "ContextWindow",
+            "Quiz",
+            "Title",
+            "Free"
+          ]
+        },
+        "params": {
+          "type": "object"
+        },
+        "camera": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "focus": {
+              "type": "string"
+            },
+            "zoom": {
+              "type": "number",
+              "minimum": 0.5,
+              "maximum": 12
+            }
+          }
+        },
+        "honesty": {
+          "enum": [
+            "official",
+            "inferred",
+            "undisclosed"
+          ],
+          "default": "official"
+        },
+        "ui_mock": {
+          "type": "boolean",
+          "default": false,
+          "description": "true 时角落标「界面示意」"
+        },
+        "continues": {
+          "type": "boolean",
+          "default": false,
+          "description": "true 时沿用上一个 beat 的原语实例，不重建"
+        }
+      }
+    },
+    "beat": {
+      "type": "object",
+      "required": [
+        "id",
+        "chapter",
+        "move",
+        "narration",
+        "visual",
+        "facts"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^B\\d{3}$"
+        },
+        "chapter": {
+          "type": "string",
+          "pattern": "^CH\\d{2}$"
+        },
+        "move": {
+          "enum": [
+            "hook",
+            "ask",
+            "show",
+            "name",
+            "place",
+            "compare",
+            "recap",
+            "quiz",
+            "transition",
+            "end"
+          ],
+          "description": "四拍：ask=问 show=演 name=名 place=归"
+        },
+        "concept": {
+          "type": "string",
+          "pattern": "^C\\d{2}$",
+          "description": "本 beat 首次引入的概念，至多一个"
+        },
+        "narration": {
+          "type": "string",
+          "description": "旁白；用 [[cue名]] 标记画面动作对齐的位置"
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 12
+          },
+          "maxItems": 3,
+          "description": "上屏关键词，≤ 3 个；每个不超过 8 个汉字，英文按宽度折算最多 12 个字符"
+        },
+        "visual": {
+          "$ref": "#/$defs/visual"
+        },
+        "cues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/cue"
+          }
+        },
+        "facts": {
+          "$ref": "#/$defs/factRefs"
+        },
+        "min_hold_s": {
+          "type": "number",
+          "minimum": 0,
+          "default": 0.6
+        },
+        "audio": {
+          "type": "object",
+          "description": "配音后由脚本回填",
+          "additionalProperties": false,
+          "properties": {
+            "file": {
+              "type": "string"
+            },
+            "start_s": {
+              "type": "number"
+            },
+            "duration_s": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  }
+}

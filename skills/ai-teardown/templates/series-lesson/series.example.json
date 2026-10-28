@@ -1,0 +1,317 @@
+{
+  "title": "AI 实战课：从提示词到 Codex",
+  "title_html": "AI 实战课：从提示词到 <b>Codex</b>",
+  "author": "@Berryxia",
+  "status": "draft",
+  "status_label": "全部 12 节已上线",
+  "tagline": "给会一点电脑的职场人：先弄懂大模型和智能体的底层逻辑，学会写提示词、派任务，再手把手用 OpenAI Codex 做出网页、整理表格、管好配置。每节视频配一份能照着敲的图文步骤。",
+  "facts": [
+    {
+      "k": "对象",
+      "v": "会一点电脑的职场人（会装软件、不会写代码）"
+    },
+    {
+      "k": "课时",
+      "v": "12 节 × 8–12 分钟：概念 3 + 提示词 2 + Codex 实战 7"
+    },
+    {
+      "k": "资料",
+      "v": "OpenAI 官方文档优先；社区教程只作参考并回到官方核对"
+    },
+    {
+      "k": "画面",
+      "v": "真实终端录屏 + 动画讲解；每节附图文步骤"
+    },
+    {
+      "k": "时效",
+      "v": "价格、模型名以 2026-09-26 检索为准，变化快"
+    },
+    {
+      "k": "作者",
+      "v": "@Berryxia"
+    }
+  ],
+  "lessons_sub": "前 5 节讲原理和提示词，后 7 节手把手用 Codex。每节配课后三问、动手练习和官方延伸阅读。",
+  "lessons": [
+    {
+      "n": 0,
+      "title": "课程地图：这门课怎么学",
+      "hook": "开始之前，先看一眼地图",
+      "intro": "三站路线一图看清：先弄懂原理，再学会说话，最后手把手用 Codex。也讲清课程页怎么用、需要准备什么账号，以及中国大陆观众该从哪一节看起。",
+      "points": [
+        "三站路线与 12 节内容",
+        "实战画面：真实录屏 + 官方截图",
+        "课程页怎么用：图文步骤、课后三问、官方延伸阅读",
+        "准备什么：电脑、账号、练习文件夹",
+        "暂停想一想：你最想交给 AI 的重复活"
+      ],
+      "minutes": "4",
+      "video": "lesson00.mp4",
+      "poster": "lesson00.jpg",
+      "length": "3 分 19 秒",
+      "interactive": "https://claude.ai/artifact/W1yuNGW63R4SjvtGVMwZJt"
+    },
+    {
+      "n": 1,
+      "title": "大模型怎么「读」你的话",
+      "hook": "为什么聊着聊着它就忘了前面说的？",
+      "intro": "用 AI 干活之前，先弄懂它的几条「物理定律」：它按 token 读写、按 token 收费；一次能看到的内容有上限，而且什么都占地方；推理模型会先想再答，想得越多越慢越贵。",
+      "points": [
+        "token：读写单位，也是计费单位（推理 token 看不见也要算）",
+        "上下文窗口像一张办公桌：指令、资料、工具结果、它自己的回答都占桌面",
+        "推理模型与推理强度：什么时候调高、什么时候调低",
+        "第一季回顾：幻觉与知识截止，一句话带过",
+        "动手：用官方 Tokenizer 数一数中英文各占多少 token"
+      ],
+      "minutes": "8–12",
+      "video": "lesson01.mp4",
+      "poster": "lesson01.jpg",
+      "length": "7 分 24 秒",
+      "interactive": "https://claude.ai/artifact/QZ9UNXWCMd6LBeHUeDqZ89"
+    },
+    {
+      "n": 2,
+      "title": "从聊天到干活：智能体是怎么工作的",
+      "hook": "AI 只会说话，它是怎么「动手」改文件的？",
+      "intro": "模型自己从不动手，它只会「开单子」，由外面的程序照单执行，再把结果交回。这一节拆开一次真实请求，看清智能体循环：想、做、看，再想。",
+      "points": [
+        "工具调用：医生开检查单，检验科去做",
+        "智能体循环：推理 → 调工具 → 看结果 → 再推理",
+        "一次请求的解剖：系统指令、工具清单、AGENTS.md、你的话",
+        "越聊越长：缓存与自动压缩（前情提要）",
+        "Codex 一次任务的全过程，七步走完"
+      ],
+      "minutes": "8–12",
+      "video": "lesson02.mp4",
+      "poster": "lesson02.jpg",
+      "length": "7 分 43 秒",
+      "interactive": "https://claude.ai/artifact/7uZdrkzja9B9qyHfUkoR6x"
+    },
+    {
+      "n": 3,
+      "title": "连接与边界：MCP、沙箱和审批",
+      "hook": "让 AI 碰你的电脑，怎么保证它不乱来？",
+      "intro": "智能体能读文件、跑命令、连外部工具，那它的手能伸多长？这一节讲三件事：MCP 怎样把外部工具接进来，沙箱规定它能碰什么，审批规定什么时候必须先问你。",
+      "points": [
+        "MCP：AI 应用的 USB-C 口",
+        "沙箱三档：只读 / 工作区可写 / 完全放开",
+        "审批：on-request 什么时候会停下来问你",
+        "为什么不要轻易开「完全放开」",
+        "什么时候根本不需要智能体"
+      ],
+      "minutes": "8–12",
+      "video": "lesson03.mp4",
+      "poster": "lesson03.jpg",
+      "length": "7 分 43 秒",
+      "interactive": "https://claude.ai/artifact/AS1umR7m46K8J22vzRTnq2"
+    },
+    {
+      "n": 4,
+      "title": "提示词基本功",
+      "hook": "同样一句话，为什么别人问得比你准？",
+      "intro": "把 AI 当成聪明但刚入职的新同事：它不知道你的背景、不知道你要什么格式。这一节用「目标、背景、输出、边界」四要素，把一句含糊的请求改成能稳定拿到好结果的交代。",
+      "points": [
+        "四要素：目标 · 背景 · 输出 · 边界",
+        "说清「为什么」，它会举一反三",
+        "用标题和标签把指令、资料、示例分开",
+        "给例子（few-shot）与结构化输出",
+        "推理模型别再写「请一步步思考」"
+      ],
+      "minutes": "8–12",
+      "video": "lesson04.mp4",
+      "poster": "lesson04.jpg",
+      "length": "8 分 7 秒",
+      "interactive": "https://claude.ai/artifact/K2YZZ1QtAWZ1Hum47zpTNu"
+    },
+    {
+      "n": 5,
+      "title": "给智能体派活",
+      "hook": "怎么交代任务，AI 才能一次做对？",
+      "intro": "给编程智能体写任务，和写聊天提示不一样：要说清改哪里、做到什么算完、怎么验证，还要让它汇报做了什么。长期规则写进 AGENTS.md，不用每次重复。",
+      "points": [
+        "派活清单：目标、相关文件、约束、验收标准",
+        "修问题先给复现步骤，要求先复现再改",
+        "让它跑检查并汇报：跑了什么、结果如何",
+        "大需求先让它问你问题、写方案",
+        "AGENTS.md：写给智能体的入职手册"
+      ],
+      "minutes": "8–12",
+      "video": "lesson05.mp4",
+      "poster": "lesson05.jpg",
+      "length": "8 分 10 秒",
+      "interactive": "https://claude.ai/artifact/6EENEVS5QpxFMm2NkTNsxw"
+    },
+    {
+      "n": 6,
+      "title": "认识 Codex：选对入口，装好它",
+      "hook": "Codex 到底在哪儿用？要花钱吗？",
+      "intro": "Codex 有四个客户端：ChatGPT 桌面 App、命令行 CLI、编辑器扩展和网页云端。这一节比较它们各适合谁、要什么账号和套餐，再手把手装好 CLI 并登录。中国大陆用户的现实情况也如实说明。",
+      "points": [
+        "四个入口怎么选（桌面 App / CLI / IDE / 云端）",
+        "账号与套餐：截至 2026-09-26 的官方说法",
+        "Mac 与 Windows 安装 CLI（逐条命令）",
+        "登录：ChatGPT 账号 vs API key",
+        "中国大陆用户：官方支持地区与账号风险，第 12 节讲可行路径"
+      ],
+      "minutes": "8–12",
+      "official_videos": [
+        {
+          "title": "官方用例：用 Codex 清洗 CSV 数据",
+          "url": "https://cdn.openai.com/devhub/videos-learn/data-analysis-cleaning-csv-1080p-v1.mp4",
+          "poster": "posters/poster-data-analysis-cleaning-csv.webp"
+        }
+      ],
+      "video": "lesson06.mp4",
+      "poster": "lesson06.jpg",
+      "length": "7 分 19 秒",
+      "interactive": "https://claude.ai/artifact/3bgtxWy4igdUjThXXzKL3a"
+    },
+    {
+      "n": 7,
+      "title": "第一次上手：让 Codex 读懂一个文件夹",
+      "hook": "第一次打开 Codex，屏幕上这些都是什么？",
+      "intro": "建一个干净的练习文件夹、打一个 Git 检查点，然后启动 Codex：认识界面、选权限预设、让它介绍这个文件夹、做第一处小改动、看改动、撤销改动。全程真实录屏。",
+      "points": [
+        "练习前的准备：新文件夹 + git init + 第一次提交",
+        "启动 Codex，认识界面与状态栏",
+        "权限预设：Auto 与 Read Only",
+        "第一个任务：介绍这个项目",
+        "看改动（/diff）与撤销：Git 检查点救命"
+      ],
+      "minutes": "8–12",
+      "video": "lesson07.mp4",
+      "poster": "lesson07.jpg",
+      "length": "7 分 14 秒",
+      "interactive": "https://claude.ai/artifact/2yUJ4hiWsZxgPkUTqdHDS8"
+    },
+    {
+      "n": 8,
+      "title": "实战一：一句话做出团队介绍网页",
+      "hook": "不会写代码，能不能半小时做出一个网页？",
+      "intro": "从一句需求出发，让 Codex 先问你问题、再动手，做出一个能在浏览器里打开的团队介绍页。然后一轮一轮地改：换配色、加成员、适配手机。每一步都是真实录屏。",
+      "points": [
+        "让它先问你 5 个问题，再写方案",
+        "第一版：生成页面并在浏览器里打开",
+        "迭代：说清哪里不满意，而不是「再改改」",
+        "适配手机与自查",
+        "收尾：提交一次 Git 检查点"
+      ],
+      "minutes": "8–12",
+      "video": "lesson08.mp4",
+      "poster": "lesson08.jpg",
+      "length": "7 分 21 秒",
+      "interactive": "https://claude.ai/artifact/QSnknF5QJWhaP1fxC8QQQb"
+    },
+    {
+      "n": 9,
+      "title": "实战二：办公数据自动整理",
+      "hook": "每月重复的表格整理，能交给 AI 吗？",
+      "intro": "一堆格式不一的销售表格，要汇总、清洗、出图、写结论。这一节让 Codex 写一个可以反复用的整理脚本：给清楚输入、输出和验收标准，让它自己跑、自己检查。",
+      "points": [
+        "说清输入、输出与验收标准",
+        "让它先看数据、再动手",
+        "生成汇总表和图表",
+        "让它自己验证结果并汇报",
+        "下个月换一批数据，一条命令重跑"
+      ],
+      "minutes": "8–12",
+      "official_videos": [
+        {
+          "title": "官方用例：用 Codex 清洗 CSV 数据",
+          "url": "https://cdn.openai.com/devhub/videos-learn/data-analysis-cleaning-csv-1080p-v1.mp4",
+          "poster": "posters/poster-data-analysis-cleaning-csv.webp"
+        },
+        {
+          "title": "官方用例：找出欺诈交易的峰值",
+          "url": "https://cdn.openai.com/devhub/videos-learn/data-analysis-fraud-spike-1080p-v1.mp4",
+          "poster": "posters/poster-data-analysis-fraud-spike.webp"
+        }
+      ],
+      "video": "lesson09.mp4",
+      "poster": "lesson09.jpg",
+      "length": "7 分 6 秒",
+      "interactive": "https://claude.ai/artifact/4npJNrfYAYsnu1h2TF3YMK"
+    },
+    {
+      "n": 10,
+      "title": "管好你的 Codex：说明书、配置和额度",
+      "hook": "怎样让 Codex 记住你的规矩，还不乱花额度？",
+      "intro": "用 /init 生成 AGENTS.md 并改成你的规矩；认识 config.toml 里最常用的几项；用 /model 选模型和推理强度，用 /status 看额度；会话恢复和 /review 自查改动。",
+      "points": [
+        "/init 生成 AGENTS.md，再改成你的规矩",
+        "config.toml：模型、推理强度、权限的默认值",
+        "/model 与推理强度怎么选",
+        "/status 看额度，官方省额度建议",
+        "codex resume 与 /review"
+      ],
+      "minutes": "8–12",
+      "video": "lesson10.mp4",
+      "poster": "lesson10.jpg",
+      "length": "7 分 45 秒",
+      "interactive": "https://claude.ai/artifact/WzAjf1nLmnC1hRsDRBRdDj"
+    },
+    {
+      "n": 11,
+      "title": "进阶：接工具、自动化与排错",
+      "hook": "Codex 还能连上哪些工具？卡住了怎么办？",
+      "intro": "用 MCP 给 Codex 接上外部工具；用 codex exec 把固定任务变成一条命令；了解云端任务和 GitHub 代码审查能做什么。最后是一张官方排错清单：最常见的报错怎么处理。",
+      "points": [
+        "codex mcp add：接一个文档查询工具",
+        "codex exec：一条命令跑完一个任务",
+        "云端任务与 @codex review（概览）",
+        "常见报错与官方排查办法",
+        "codex doctor 与反馈渠道"
+      ],
+      "minutes": "8–12",
+      "official_videos": [
+        {
+          "title": "官方视频：Codex 代码审查演示（YouTube）",
+          "url": "https://www.youtube.com/watch?v=HwbSWVg5Ln4"
+        }
+      ],
+      "video": "lesson11.mp4",
+      "poster": "lesson11.jpg",
+      "length": "7 分 50 秒",
+      "interactive": "https://claude.ai/artifact/Bo94RRETfY4toqZ4RBUnu5"
+    },
+    {
+      "n": 12,
+      "title": "接国产模型与本地模型，以及接下来怎么学",
+      "hook": "在中国大陆，Codex 还能怎么用？",
+      "intro": "OpenAI 官方支持地区不含中国大陆和港澳。与官方政策不冲突的技术路径，是开源的 Codex CLI 接国产模型厂商的 API 或本地模型。这一节按官方配置文档讲清规则：只支持 Responses 接口，所以国产模型多数要经过协议转换；再用本机 Ollama 实操本地模型模式。最后给一张学习路线图。",
+      "points": [
+        "官方口径：支持地区与账号风险（不教规避）",
+        "model_providers 的官方写法与「只支持 Responses」限制",
+        "国产模型：哪些能直连，哪些要协议转换",
+        "本地模型：--oss + Ollama 实操",
+        "学习路线图：从会用到用好"
+      ],
+      "minutes": "8–12",
+      "video": "lesson12.mp4",
+      "poster": "lesson12.jpg",
+      "length": "7 分 24 秒",
+      "interactive": "https://claude.ai/artifact/TALaNCyjCrenvHATh6UBRr"
+    }
+  ],
+  "footer": "资料截至 2026-09-26。Codex 迭代很快，操作前请以 learn.chatgpt.com 官方文档为准。",
+  "stages": [
+    {
+      "name": "第一站 · 弄懂原理",
+      "range": "第 1–3 节",
+      "color": "m5",
+      "get": "明白 token、上下文、推理强度；知道智能体怎么动手、边界在哪"
+    },
+    {
+      "name": "第二站 · 学会说话",
+      "range": "第 4–5 节",
+      "color": "m2",
+      "get": "写出目标、背景、输出、边界俱全的提示词；会给智能体派活"
+    },
+    {
+      "name": "第三站 · 手把手用 Codex",
+      "range": "第 6–12 节",
+      "color": "m6",
+      "get": "装好 Codex，做网页、整理表格，管好配置与额度，会排错，能接其他模型"
+    }
+  ]
+}

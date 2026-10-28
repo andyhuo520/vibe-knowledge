@@ -1,0 +1,583 @@
+{
+ "title": "WorkBuddy 上手课",
+ "title_html": "WorkBuddy <em>上手课</em>",
+ "author": "@Berryxia",
+ "status": "draft",
+ "status_label": "全部 25 节已上线",
+ "tagline": "跟着开源《WorkBuddy 实战蓝皮书》，从下载安装、第一个任务，一路学到专家团、自动化和多 Agent，把 AI 同事真正用进工作。内容与截图引用自 github.com/AlephAITech/WorkBuddyGuide（MIT）。",
+ "facts": [
+  {
+   "k": "对象",
+   "v": "想把 AI 用进日常工作的职场人，零基础可学"
+  },
+  {
+   "k": "课时",
+   "v": "25 节 × 4–7 分钟：入门 → 办公与生活场景 → 进阶与路线图"
+  },
+  {
+   "k": "资料",
+   "v": "开源《WorkBuddy 实战蓝皮书》，每节标注对应章节"
+  },
+  {
+   "k": "画面",
+   "v": "Notion 极简风 + 书中截图与录屏 + 流程图动画 + 讲解小人"
+  },
+  {
+   "k": "互动版",
+   "v": "每节都有，可暂停、点图看出处"
+  },
+  {
+   "k": "作者",
+   "v": "@Berryxia"
+  }
+ ],
+ "lessons_sub": "第 0–3 节入门，第 4–8 节连接器与自动化，第 9–18 节办公、生活与内容场景，第 19–24 节进阶与路线图。另有第 3 节英文版（仅视频）。",
+ "lessons": [
+  {
+   "n": 0,
+   "title": "下载、安装、登录与更新",
+   "chapters": [
+    "第 2 章"
+   ],
+   "points": [
+    "只从官方入口下载",
+    "Win 按向导装，Mac 拖进应用程序",
+    "微信扫码或手机号登录",
+    "个人中心里检查更新"
+   ],
+   "minutes": "4",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson00.mp4",
+   "poster": "lesson00.jpg",
+   "length": "4 分 24 秒",
+   "interactive": "https://claude.ai/artifact/F9ZJATxn4c7QAuj5y7mxUe",
+   "hook": "让 WorkBuddy 在你的电脑上跑起来",
+   "intro": "课程开头先把工具装好：在哪里下载，Windows 和 Mac 怎么安装，怎么登录，以后怎么检查更新。"
+  },
+  {
+   "n": 1,
+   "title": "初识 WorkBuddy：一句话，交付一份成果",
+   "hook": "AI 聊天工具只给答案，它能把活干完吗？",
+   "intro": "WorkBuddy 是什么、主界面三块区域怎么看、工作空间和三种模式怎么选，最后按蓝皮书第 4 章派出第一个任务，并学会任务说明六要素。",
+   "points": [
+    "从「回答问题」到「交付结果」",
+    "一次任务的流程：目标 → 资料 → 拆解 → 执行 → 验收",
+    "主界面三区域与工作空间：效率设置也是安全边界",
+    "Ask / Craft / Plan 三种模式按风险选",
+    "第一个任务八步 + 任务说明六要素"
+   ],
+   "minutes": "6",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson01.mp4",
+   "poster": "lesson01.jpg",
+   "length": "6 分 23 秒",
+   "interactive": "https://claude.ai/artifact/7wVLK7nczirsGSUqZsLReX"
+  },
+  {
+   "n": 2,
+   "title": "装上第一个真正用得上的 Skill",
+   "hook": "同样的要求，为什么每次都要重说一遍？",
+   "intro": "Skill 是什么、渐进式披露怎么省上下文、它和 Prompt 的区别与四个作用，最后在 WorkBuddy 里找、装、用、关一个 Skill。",
+   "points": [
+    "Skill = 一个文件夹，只有 SKILL.md 必需",
+    "渐进式披露三层：名字描述 → 完整说明 → 资料脚本",
+    "Prompt 是任务，Skill 是做法",
+    "四个作用：程序性知识、固定流程、减少重复、经验资产化",
+    "技能市场 / SkillHub / 上传 zip，用斜杠唤出，开关与删除"
+   ],
+   "minutes": "6",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson02.mp4",
+   "poster": "lesson02.jpg",
+   "length": "5 分 37 秒",
+   "interactive": "https://claude.ai/artifact/GZYSLiRrSNNHGugH8NTV7Z"
+  },
+  {
+   "n": 3,
+   "title": "专家和专家团：让好几个 AI 分工合作",
+   "hook": "有些活光有本事不够，还得懂行、会分工。",
+   "intro": "专家是「人设 + 方法论 + 工具链」，专家团是「多位专家 + 团长拆解汇总」；和普通任务、Skill 的区别，召唤、创建一位专家，召唤一个专家团。",
+   "points": [
+    "同样的活，专家多想了哪几步",
+    "专家 = 有明确岗位和专业经验的 AI 同事",
+    "专家团：团长拆解、成员并行、整合交付",
+    "四种用法怎么选",
+    "召唤专家、创建专家、召唤专家团"
+   ],
+   "minutes": "4",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson03.mp4",
+   "poster": "lesson03.jpg",
+   "length": "3 分 45 秒",
+   "interactive": "https://claude.ai/artifact/YB8wAjWPPNkrSSY2zRDKrp"
+  },
+  {
+   "n": 4,
+   "title": "连接器与外部 API：接上你的在线工具",
+   "chapters": [
+    "第 7 章",
+    "第 9 章"
+   ],
+   "points": [
+    "MCP：N×M 变 N+M",
+    "连接器：一句话办事",
+    "没有的，自定义连接器",
+    "没积分，接自己的模型"
+   ],
+   "minutes": "5",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson04.mp4",
+   "poster": "lesson04.jpg",
+   "length": "4 分 57 秒",
+   "interactive": "https://claude.ai/artifact/KdazA9iW7pihW361hxrEaL",
+   "hook": "会议、邮件、文档，都在别的工具里",
+   "intro": "这一节讲三件事：连接器背后的 MCP（AI 世界的 USB-C）；加载 · 使用连接器（以腾讯会议为例）；接入外部 API（用你自己的模型）。"
+  },
+  {
+   "n": 5,
+   "title": "接入小程序与 IM 助理",
+   "chapters": [
+    "第 8 章 接入小程序"
+   ],
+   "points": [
+    "小程序：本机 · 云端",
+    "微信：扫码绑定",
+    "飞书 · 钉钉：建应用",
+    "凭证管好，只读先测"
+   ],
+   "minutes": "5",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson05.mp4",
+   "poster": "lesson05.jpg",
+   "length": "4 分 43 秒",
+   "interactive": "https://claude.ai/artifact/9MbvQDJ1pVjQPHQo973B7p",
+   "hook": "人不在电脑前，也能派活吗？",
+   "intro": "这一节讲三件事：小程序（本机 · 云端两种模式）；微信助理（扫码绑定）；飞书 · 钉钉（开放平台建应用）。"
+  },
+  {
+   "n": 6,
+   "title": "飞书办公实战：从接入到交付",
+   "chapters": [
+    "第 8 章 飞书"
+   ],
+   "points": [
+    "五步接入，看清授权",
+    "读取 → 处理 → 交付",
+    "提示词写清四样东西",
+    "打开实物核对验收"
+   ],
+   "minutes": "6",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson06.mp4",
+   "poster": "lesson06.jpg",
+   "length": "6 分 3 秒",
+   "interactive": "https://claude.ai/artifact/THm4cLG3J6wXjGKYQ1H9gd",
+   "hook": "在 WorkBuddy 里，调用飞书",
+   "intro": "这一节讲三件事：接入飞书连接器（五步 · 授权）；三个办公场景（群聊 · 会议 · GEO 整改）；交付和验收（任务结构 · 核对结果）。"
+  },
+  {
+   "n": 7,
+   "title": "自动化任务：让它按时自己干活",
+   "chapters": [
+    "第 10 章"
+   ],
+   "points": [
+    "时间固定、步骤相似、结果可检查",
+    "六个问题，挑出第一批",
+    "提示词写清七件事",
+    "限权限、低频试跑、人工检查"
+   ],
+   "minutes": "6",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson07.mp4",
+   "poster": "lesson07.jpg",
+   "length": "6 分 12 秒",
+   "interactive": "https://claude.ai/artifact/XjvgpRk6Jfge1FHsG3aZWU",
+   "hook": "有些活，天天都要重来一遍",
+   "intro": "这一节讲三件事：什么任务适合（时间固定 · 步骤相似）；写成任务说明（一句想法 → 小型说明）；创建自动化任务（设置 · 模板 · 边界）。"
+  },
+  {
+   "n": 8,
+   "title": "课外阅读：一章看懂 AI 工作系统",
+   "chapters": [
+    "课外阅读"
+   ],
+   "points": [
+    "五类角色，人是裁判",
+    "模型懂，不等于能做",
+    "该停就停，请人确认",
+    "路径定用 Workflow不定交给 Agent"
+   ],
+   "minutes": "5",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson08.mp4",
+   "poster": "lesson08.jpg",
+   "length": "4 分 41 秒",
+   "interactive": "https://claude.ai/artifact/RXWPLXuvTxGAcgfZJVyYNg",
+   "hook": "模型、Agent、Skill、MCP……是什么关系？",
+   "intro": "这一节讲三件事：一张全景图（五类角色，各管什么）；Agent 的循环（什么时候该停）；Workflow 与 Agent（决策权在哪）。"
+  },
+  {
+   "n": 9,
+   "title": "办公三件套：Word、Excel、PPT",
+   "chapters": [
+    "第 11 章"
+   ],
+   "points": [
+    "开工前：目标 · 受众 · 材料 · 格式 · 验收",
+    "Word：改稿说差异，不重写",
+    "Excel：先定业务问题，再做图",
+    "PPT：先定故事线，再做页面"
+   ],
+   "minutes": "6",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson09.mp4",
+   "poster": "lesson09.jpg",
+   "length": "5 分 39 秒",
+   "interactive": "https://claude.ai/artifact/2JLLGM7UYcXQk94qdYtQZk",
+   "hook": "使用手册讲完了，进入真实案例",
+   "intro": "这一节讲三件事：Word（团建活动策划）；Excel（销售数据分析）；PPT（AI Agent 主题分享）。"
+  },
+  {
+   "n": 10,
+   "title": "整理桌面文件与远程控制电脑",
+   "chapters": [
+    "第 12 章",
+    "第 13 章"
+   ],
+   "points": [
+    "先出清单，不动原件",
+    "分清云端还是本机",
+    "限定目录，只读优先",
+    "高风险确认，执行≠验收"
+   ],
+   "minutes": "6",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson10.mp4",
+   "poster": "lesson10.jpg",
+   "length": "6 分 30 秒",
+   "interactive": "https://claude.ai/artifact/2UA325ix3Fv4s8cn6jMbRK",
+   "hook": "人不在电脑前，也能让它干活",
+   "intro": "这一节讲三件事：整理发票（先清单 · 不动原件）；云端还是本机（远程之前先分清）；三个远程场景（找文件 · 微信文件 · 长任务）。"
+  },
+  {
+   "n": 11,
+   "title": "生活助手：减少琐碎",
+   "chapters": [
+    "第 14 章"
+   ],
+   "points": [
+    "分三类：分清谁做什么",
+    "先收集约束，再出方案",
+    "标来源，查不到待确认",
+    "预订付款，由人确认"
+   ],
+   "minutes": "6",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson11.mp4",
+   "poster": "lesson11.jpg",
+   "length": "5 分 56 秒",
+   "interactive": "https://claude.ai/artifact/2XAShJLCb5tM52rT8PaG52",
+   "hook": "旅行、做饭、买东西，它能帮什么忙？",
+   "intro": "这一节讲三件事：三天旅行（规划 · 核验 · 不代付）；五天晚餐（先问清楚 · 再排菜）；买前比较（限定来源 · 不代下单）。"
+  },
+  {
+   "n": 12,
+   "title": "资讯整合：把信息流变成每日通知",
+   "chapters": [
+    "第 15 章"
+   ],
+   "points": [
+    "一条链路：收集到推送",
+    "GitHub 热点：一句话变定时任务",
+    "AI 日报：先打分，只推重点",
+    "标来源、标待确认，不编造"
+   ],
+   "minutes": "5",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson12.mp4",
+   "poster": "lesson12.jpg",
+   "length": "5 分 28 秒",
+   "interactive": "https://claude.ai/artifact/VZyCEwBdCs5NmnwMy12DT7",
+   "hook": "每天刷不完的信息流",
+   "intro": "这一节讲三件事：共同工作流（收集 → 推送）；GitHub 热点（每日定时通知）；AI 行业日报（AIHOT · 打分 · 只推重点）。"
+  },
+  {
+   "n": 13,
+   "title": "知识管理：收藏之后能再用起来",
+   "chapters": [
+    "第 16 章"
+   ],
+   "points": [
+    "入口可以多个，主版本要清楚",
+    "收集灵感，保留原话",
+    "整理收藏，只读不删",
+    "ima 管移动入口，Obsidian 做 Wiki"
+   ],
+   "minutes": "5",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson13.mp4",
+   "poster": "lesson13.jpg",
+   "length": "5 分 7 秒",
+   "interactive": "https://claude.ai/artifact/WqwZHtzCmeSAWhgrAHc8Vh",
+   "hook": "收藏了一堆，要用时却找不着",
+   "intro": "这一节讲三件事：分工 · 主版本（WPS · ima · Obsidian……）；收集（灵感 · 微信收藏）；检索和复用（ima · Obsidian）。"
+  },
+  {
+   "n": 14,
+   "title": "会议之后：把纪要变成行动",
+   "chapters": [
+    "第 17 章"
+   ],
+   "points": [
+    "会前：先定要做的决定",
+    "先确认会议和权限",
+    "纪要：找不到写待确认",
+    "待办预览 · 通知草稿"
+   ],
+   "minutes": "6",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson14.mp4",
+   "poster": "lesson14.jpg",
+   "length": "5 分 56 秒",
+   "interactive": "https://claude.ai/artifact/ENm3aXXh66A9Jr8BdHPHpt",
+   "hook": "会开完了，活才刚开始",
+   "intro": "这一节讲三件事：拿到会议内容（会前议程 · 腾讯会议 Skill）；转写变纪要（五类信息 · 找不到写待确认）；待办和通知落地（先预览 · 只出草稿）。"
+  },
+  {
+   "n": 15,
+   "title": "把投资分析变成日常",
+   "chapters": [
+    "第 18 章"
+   ],
+   "points": [
+    "AI 是研究助理，判断留给你",
+    "五问定标 · stock-advisor 编排",
+    "看图 · 看财报 · 私董会找反证",
+    "只是信息整理，不构成投资建议"
+   ],
+   "minutes": "6",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson15.mp4",
+   "poster": "lesson15.jpg",
+   "length": "6 分 12 秒",
+   "interactive": "https://claude.ai/artifact/3Go2Tj72m4wZdoVu2iECJD",
+   "hook": "AI 做研究助理，判断留给你",
+   "intro": "这一节讲三件事：研究工作框架（四类事 · 五问定标 · 编排）；个股研究案例（看图 → 看财报 → 私董会）；风险边界（不构成投资建议）。"
+  },
+  {
+   "n": 16,
+   "title": "一句话召唤 AI 视频团队",
+   "chapters": [
+    "第 19 章"
+   ],
+   "points": [
+    "一个生产，一个学习",
+    "角色输入输出清晰",
+    "三处留给人把关",
+    "学方法，不搬运"
+   ],
+   "minutes": "6",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson16.mp4",
+   "poster": "lesson16.jpg",
+   "length": "6 分 24 秒",
+   "interactive": "https://claude.ai/artifact/KCqbxXsFq7JatqzWtsVWgJ",
+   "hook": "做短视频，是件反人类的事？",
+   "intro": "这一节讲三件事：视频生成团队（四个角色怎么接力）；爆款拆解团队（把好视频拆成手册）；人工把关（哪几步必须你来看）。"
+  },
+  {
+   "n": 17,
+   "title": "自媒体的增长闭环",
+   "chapters": [
+    "第 20 章"
+   ],
+   "points": [
+    "选题 → 创作 → 发布 → 复盘",
+    "选题看账号匹配，不只看阅读量",
+    "标题是承诺，发布停在草稿箱",
+    "复盘写进 style-guide"
+   ],
+   "minutes": "5",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson17.mp4",
+   "poster": "lesson17.jpg",
+   "length": "5 分 14 秒",
+   "interactive": "https://claude.ai/artifact/WfcMKssPqFrXzVFGd5roWn",
+   "hook": "写得很深，阅读量却个位数？",
+   "intro": "这一节讲三件事：增长闭环（选题 → 创作 → 发布 → 复盘）；选题（看账号匹配，不只看热度）；数据复盘（下一篇不从零开始）。"
+  },
+  {
+   "n": 18,
+   "title": "WorkBuddy 也能做 GEO",
+   "chapters": [
+    "第 21 章"
+   ],
+   "points": [
+    "有没有你、准不准",
+    "先定口径再测",
+    "不稳标样本观察",
+    "落到行动、复测"
+   ],
+   "minutes": "7",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson18.mp4",
+   "poster": "lesson18.jpg",
+   "length": "6 分 59 秒",
+   "interactive": "https://claude.ai/artifact/KNU1W2ZeiAmJ7waegDKWXb",
+   "hook": "AI 的回答里，有没有你？",
+   "intro": "这一节讲三件事：诊断什么（五个问题看清 GEO）；诊断专家与报告（召唤专家 · 读懂报告）；从诊断到行动（个人 IP · 企业 · 路线图）。"
+  },
+  {
+   "n": 19,
+   "title": "打造 Skill：把书和视频蒸馏成能力",
+   "chapters": [
+    "第 22 章"
+   ],
+   "points": [
+    "精馏不是摘要",
+    "六阶段：理解到测试",
+    "验证加诱饵测试",
+    "视频先转成文字"
+   ],
+   "minutes": "7",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson19.mp4",
+   "poster": "lesson19.jpg",
+   "length": "6 分 35 秒",
+   "interactive": "https://claude.ai/artifact/73ppHhMMH65NcpMEDFTVmm",
+   "hook": "读过的书，为什么用不上？",
+   "intro": "这一节讲三件事：知识精馏（是什么 · 和 RAG 差在哪）；六阶段 SOP（一本书蒸成一套 Skill）；视频蒸馏（蒸完之后怎么用）。"
+  },
+  {
+   "n": 20,
+   "title": "实操案例集",
+   "chapters": [
+    "第 23 章"
+   ],
+   "points": [
+    "免费额度先用透",
+    "点「优化提示词」",
+    "要求写成条目",
+    "Skill 当连接层"
+   ],
+   "minutes": "5",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson20.mp4",
+   "poster": "lesson20.jpg",
+   "length": "5 分 20 秒",
+   "interactive": "https://claude.ai/artifact/6khcSzgrWp2AUiCrUiour1",
+   "hook": "容易被忽略，但价值很高的用法",
+   "intro": "这一节讲三件事：短任务（Excel 可视化 · 数据清洗）；设计创意（提示词生成完整网站）；Skill 联动（把好几个服务串起来）。"
+  },
+  {
+   "n": 21,
+   "title": "多 Agent 系统设计",
+   "chapters": [
+    "第 24 章"
+   ],
+   "points": [
+    "先判断值不值得拆",
+    "写清角色契约",
+    "只读已确认产物",
+    "人拍板·降级交付"
+   ],
+   "minutes": "7",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson21.mp4",
+   "poster": "lesson21.jpg",
+   "length": "6 分 50 秒",
+   "interactive": "https://claude.ai/artifact/L1ThTnMWzbp4D2Y9VwGgeD",
+   "hook": "什么时候，该让好几个 AI 分工？",
+   "intro": "这一节讲三件事：值不值得拆（单 Agent vs 多 Agent）；专家团怎么分工（宣传片专家团案例）；稳稳地接力（产物 · 拍板 · 降级）。"
+  },
+  {
+   "n": 22,
+   "title": "自动化工作流的可靠性",
+   "chapters": [
+    "第 25 章"
+   ],
+   "points": [
+    "手动跑稳再上",
+    "每步留失败出口",
+    "降级要标明缺失",
+    "重试·幂等·告警"
+   ],
+   "minutes": "6",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson22.mp4",
+   "poster": "lesson22.jpg",
+   "length": "6 分 16 秒",
+   "interactive": "https://claude.ai/artifact/7cw1s9oWkjPW6QDXf4dYAw",
+   "hook": "手动跑通了，怎么每天准时跑、跑得稳？",
+   "intro": "这一节讲三件事：该不该自动化（三个门槛 · 一句话设置）；设计成状态机（每一步都有失败出口）；出错能兜住（重试 · 幂等 · 告警）。"
+  },
+  {
+   "n": 23,
+   "title": "岗位与行业路线图",
+   "chapters": [
+    "第 26 章",
+    "第 27 章"
+   ],
+   "points": [
+    "L1 低风险起步",
+    "每岗留人工关口",
+    "四层 + 五个问题",
+    "试点挑易验收的"
+   ],
+   "minutes": "6",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson23.mp4",
+   "poster": "lesson23.jpg",
+   "length": "6 分 8 秒",
+   "interactive": "https://claude.ai/artifact/VppK8U1gx3tw6yzRuuJktv",
+   "hook": "我的岗位、我的行业，从哪儿用起？",
+   "intro": "这一节讲三件事：四级成熟度（L1 单次辅助 → L4 团队能力）；六类岗位（起步场景 · 人工关口）；行业路线图（四层 · 五个问题）。"
+  },
+  {
+   "n": 24,
+   "title": "常用指令模板与场景速查",
+   "chapters": [
+    "附录 A",
+    "附录 B"
+   ],
+   "points": [
+    "装好·首个任务",
+    "连接器·自动化",
+    "岗位行业·速查",
+    "场景案例实战",
+    "Skill·专家团",
+    "进阶·多 Agent"
+   ],
+   "minutes": "6",
+   "source": "https://github.com/AlephAITech/WorkBuddyGuide",
+   "video": "lesson24.mp4",
+   "poster": "lesson24.jpg",
+   "length": "5 分 40 秒",
+   "interactive": "https://claude.ai/artifact/J2WWKASkwedKgUTJGLPUxp",
+   "hook": "明天打开 WorkBuddy，第一句话怎么说？",
+   "intro": "这一节讲三件事：六个指令模板（附录 A）；按岗位找起点（附录 B · 人群与岗位）；人工检查点（附录 B · 四张速查表）。"
+  }
+ ],
+ "footer": "内容与截图引用自开源项目《WorkBuddy 实战蓝皮书》（AlephAITech/WorkBuddyGuide，MIT 协议），版权归原作者。插画与图标：IconPark（字节跳动）、Noto Emoji；流程图 AntV X6；配音由 AI 合成（小米 MiMo）。",
+ "sample": {
+  "heading": "先看这个：导学 · 课程地图",
+  "sub": "约 2 分半：这门课讲什么、为什么学、25 节怎么走、学完能掌握什么。特别感谢《WorkBuddy 实战蓝皮书》作者之一、我的朋友苍何老师。",
+  "video": "lessonintro.mp4",
+  "poster": "lessonintro.jpg",
+  "changes": [
+   {
+    "k": "四站",
+    "v": "入门 0–3 · 连接与自动化 4–8 · 场景实战 9–18 · 进阶与路线图 19–24"
+   },
+   {
+    "k": "学完能掌握",
+    "v": "写清任务说明 · 用好 Skill、专家和连接器 · 定时自动化 · 守住安全边界"
+   },
+   {
+    "k": "致谢",
+    "v": "蓝皮书作者：甲木未来派、摸鱼小李、袋鼠帝AI客栈、苍何、刘聪NLP"
+   }
+  ]
+ }
+}

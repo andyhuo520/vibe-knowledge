@@ -1,0 +1,365 @@
+{
+ "n": "导学",
+ "title": "导学：课程地图",
+ "series": "WorkBuddy 上手课",
+ "theme": "paper",
+ "engine": "sketch",
+ "skin": "notion",
+ "presenter": "hp",
+ "speed": 1.15,
+ "author": "@Berryxia",
+ "videoOnly": true,
+ "scenes": [
+  {
+   "t": "cover",
+   "at": "B01",
+   "title": "WorkBuddy 上手课\n导学：课程地图",
+   "eyebrow": "WorkBuddy 上手课 · 导学",
+   "question": "开讲之前，先说声感谢",
+   "questionAt": "B01.thanks",
+   "iconImg": "host-avatar",
+   "illus": "ip-14-187",
+   "props": [
+    [
+     "📚",
+     "系列",
+     "WorkBuddy 上手课 · 导学"
+    ],
+    [
+     "👤",
+     "作者",
+     "@Berryxia"
+    ],
+    [
+     "📖",
+     "素材",
+     "《WorkBuddy 实战蓝皮书》· MIT"
+    ]
+   ]
+  },
+  {
+   "t": "say",
+   "at": "B01.canghe",
+   "illus": "ip-11-137",
+   "pose": "cheer",
+   "lines": [
+    "特别感谢",
+    {
+     "text": "*苍何*老师",
+     "at": "B01.canghe+0.8"
+    },
+    {
+     "text": "蓝皮书作者之一 · 我的朋友",
+     "at": "B01@朋友"
+    }
+   ],
+   "tips": [
+    {
+     "text": "无私又厉害的大佬 👍",
+     "at": "B02.praise",
+     "until": "B02.follow",
+     "pose": "thumbsup"
+    },
+    {
+     "text": "各大社媒都能关注他",
+     "at": "B02.follow",
+     "pose": "point"
+    }
+   ]
+  },
+  {
+   "t": "stickers",
+   "at": "B02.all",
+   "title": "感谢《WorkBuddy 实战蓝皮书》的作者们",
+   "pose": "thumbsup",
+   "src": "作者名单：《WorkBuddy 实战蓝皮书》README · MIT",
+   "items": [
+    {
+     "emoji": "icon-park:user",
+     "label": "甲木未来派",
+     "at": "B02.all+0.4"
+    },
+    {
+     "emoji": "icon-park:user",
+     "label": "摸鱼小李",
+     "at": "B02@摸鱼"
+    },
+    {
+     "emoji": "icon-park:user",
+     "label": "袋鼠帝",
+     "at": "B02@袋鼠",
+     "sub": "AI 客栈"
+    },
+    {
+     "emoji": "icon-park:like",
+     "label": "苍何",
+     "at": "B02@袋鼠+0.8",
+     "sub": "我的朋友"
+    },
+    {
+     "emoji": "icon-park:user",
+     "label": "刘聪NLP",
+     "at": "B02@刘聪"
+    }
+   ],
+   "caption": {
+    "text": "免费开源 · MIT 协议",
+    "at": "B02.open"
+   }
+  },
+  {
+   "t": "kinetic",
+   "at": "B03",
+   "chapter": "① 这是什么",
+   "pose": "idea",
+   "lines": [
+    {
+     "text": "这本蓝皮书讲什么？",
+     "size": 60,
+     "y": -170,
+     "color": "gray",
+     "weight": 600,
+     "at": "B03.what"
+    },
+    {
+     "text": "从*第一项任务*",
+     "size": 100,
+     "y": -30,
+     "at": "B03.line"
+    },
+    {
+     "text": "到*一支 AI 团队*",
+     "size": 100,
+     "y": 110,
+     "at": "B03.line+1.6"
+    }
+   ]
+  },
+  {
+   "t": "quote",
+   "at": "B03.not",
+   "text": "这不是官方功能说明书的改写，而是一本以真实任务为主线的实战读本。",
+   "from": "《WorkBuddy 实战蓝皮书》README",
+   "emoji": "memo",
+   "textAt": "B03.not+0.3"
+  },
+  {
+   "t": "compare",
+   "at": "B04",
+   "chapter": "② 为什么学",
+   "neutral": true,
+   "left": {
+    "title": "问一句、答一句",
+    "emoji": "speech-balloon",
+    "at": "B04.chat",
+    "items": [
+     {
+      "text": "它回答问题",
+      "at": "B04.chat+0.8"
+     },
+     {
+      "text": "活还得你自己干",
+      "at": "B04.chat+1.8"
+     }
+    ]
+   },
+   "right": {
+    "title": "交代目标、交付成果",
+    "emoji": "robot",
+    "at": "B04.deliver",
+    "items": [
+     {
+      "text": "找资料 · 拆步骤",
+      "at": "B04@找资料"
+     },
+     {
+      "text": "去执行 · 交给你*验收*",
+      "at": "B04@去执行"
+     }
+    ]
+   }
+  },
+  {
+   "t": "kinetic",
+   "at": "B04.goal",
+   "pose": "idea",
+   "lines": [
+    {
+     "text": "这门课的目的",
+     "size": 60,
+     "y": -130,
+     "color": "gray",
+     "weight": 600,
+     "at": "B04.goal"
+    },
+    {
+     "text": "把 AI *真正用进工作*",
+     "size": 110,
+     "y": 40,
+     "at": "B04.goal+1"
+    }
+   ]
+  },
+  {
+   "t": "stickers",
+   "at": "B05",
+   "chapter": "③ 课程地图",
+   "title": "课程地图：25 节，分四站走",
+   "arrows": true,
+   "pose": "point",
+   "items": [
+    {
+     "emoji": "icon-park:rocket-one",
+     "label": "① 入门",
+     "sub": "第 0–3 节\n安装 · 首个任务\nSkill · 专家团",
+     "at": "B05.s1"
+    },
+    {
+     "emoji": "icon-park:connection",
+     "label": "② 连接 · 自动化",
+     "sub": "第 4–8 节\n连接器 · 微信 · 飞书\n定时任务",
+     "at": "B05.s2"
+    },
+    {
+     "emoji": "icon-park:list-checkbox",
+     "label": "③ 场景实战",
+     "sub": "第 9–18 节\n办公 · 生活 · 会议\n投资 · 自媒体 · GEO",
+     "at": "B06.s3"
+    },
+    {
+     "emoji": "icon-park:level",
+     "label": "④ 进阶 · 路线图",
+     "sub": "第 19–24 节\n打造 Skill · 多 Agent\n岗位行业 · 速查",
+     "at": "B06.s4"
+    }
+   ],
+   "tips": [
+    {
+     "text": "按顺序学，一站一站走",
+     "at": "B05.map",
+     "until": "B05.s2",
+     "pose": "talk"
+    },
+    {
+     "text": "场景课可以挑着看",
+     "at": "B06.list+2",
+     "until": "B06.s4",
+     "pose": "idea"
+    }
+   ]
+  },
+  {
+   "t": "checklist",
+   "at": "B07",
+   "chapter": "④ 学完能掌握",
+   "title": "学完你能掌握四件事",
+   "numbered": true,
+   "cols": 1,
+   "rowH": 130,
+   "items": [
+    {
+     "emoji": "icon-park:write",
+     "label": "写清楚任务说明",
+     "sub": "让它一次交付到位",
+     "at": "B07.g1"
+    },
+    {
+     "emoji": "icon-park:connection",
+     "label": "用好 Skill、专家和连接器",
+     "sub": "接进你手边的工具",
+     "at": "B07.g2"
+    },
+    {
+     "emoji": "icon-park:alarm-clock",
+     "label": "重复的活变成定时自动化",
+     "sub": "按时自己干活",
+     "at": "B07.g3"
+    },
+    {
+     "emoji": "icon-park:protect",
+     "label": "关键步骤由人确认",
+     "sub": "守住安全边界",
+     "at": "B07.g4"
+    }
+   ]
+  },
+  {
+   "t": "stickers",
+   "at": "B08",
+   "title": "怎么学最有效",
+   "pose": "idea",
+   "items": [
+    {
+     "emoji": "icon-park:time",
+     "label": "每节 4–7 分钟",
+     "at": "B08.short"
+    },
+    {
+     "emoji": "icon-park:thinking-problem",
+     "label": "暂停想一想",
+     "sub": "先自己想，再看答案",
+     "at": "B08.pause"
+    },
+    {
+     "emoji": "icon-park:click",
+     "label": "互动版",
+     "sub": "点图看原文出处",
+     "at": "B08.inter"
+    },
+    {
+     "emoji": "icon-park:hand-right",
+     "label": "马上动手",
+     "sub": "挑一件小事试一次",
+     "at": "B08.do"
+    }
+   ],
+   "tips": [
+    {
+     "text": "看完一节，就动手试 💪",
+     "at": "B08.do+1",
+     "pose": "cheer"
+    }
+   ]
+  },
+  {
+   "t": "say",
+   "at": "B09",
+   "illus": "ip-16-218",
+   "pose": "wave",
+   "lines": [
+    "准备好了吗？",
+    {
+     "text": "从*第 0 节*开始",
+     "at": "B09.l0"
+    },
+    {
+     "text": "下载 · 安装 · 登录",
+     "at": "B09.l0+1.2"
+    }
+   ]
+  },
+  {
+   "t": "outro",
+   "at": "B09.bye",
+   "next": "下一节：第 0 节 · 下载、安装、登录与更新",
+   "thanksAt": "B09.bye",
+   "thanks": "感谢苍何老师和《WorkBuddy 实战蓝皮书》的作者们",
+   "pose": "cheer",
+   "tips": [
+    {
+     "text": "我们第 0 节见 👋",
+     "at": "B09.bye+2",
+     "pose": "wave"
+    }
+   ],
+   "credits": [
+    "内容：《WorkBuddy 实战蓝皮书》（MIT）",
+    "github.com/AlephAITech/WorkBuddyGuide",
+    "插画：IconPark 插画库（字节跳动）· 图标：IconPark、Noto Emoji",
+    "动效：lottie-web · rough.js（MIT）",
+    "讲解小人：@Berryxia 像素头像 · 配音：小米 MiMo（AI 生成）"
+   ]
+  }
+ ],
+ "sticker": true
+}

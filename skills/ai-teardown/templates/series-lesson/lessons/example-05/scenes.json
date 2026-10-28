@@ -1,0 +1,248 @@
+{"n": 5, "title": "给智能体派活", "series": "AI 实战课", "theme": "mint", "speed": 1.15, "author": "@Berryxia",
+ "scenes": [
+  {"t": "opening", "at": "B01", "title": "给智能体派活", "titleAt": "B01.hi+0.6", "question": "*怎么交代，它才不返工？*", "questionAt": "B01.agent",
+   "icons": ["icon-park:checklist", "icon-park:terminal", "icon-park:file-code", "icon-park:check-correct", "icon-park:robot"]},
+  {"t": "twocol", "at": "B01.stakes",
+   "left": {"title": "聊天：回答写歪了", "tone": "m5", "at": "B01.stakes+0.2", "lines": [{"text": "删掉，重来就行", "at": "B01.stakes+1.4"}]},
+   "right": {"title": "智能体：交代不清", "tone": "m1", "at": "B01.stakes+2.6", "lines": [{"text": "它会改你的文件、跑命令", "at": "B01.stakes+3.6"}, {"text": "返工起来麻烦多了", "at": "B01.stakes+5.6"}]},
+   "bottom": {"text": "派活，要*交代得更具体*", "at": "B01.stakes+4.8"}},
+
+  {"t": "statement", "at": "B02", "mascot": "left", "icon": "icon-park:list-checkbox", "lines": [
+    {"text": "上节的四要素：目标 · 背景 · 输出 · 边界", "at": "B02.same"}, {"text": "*照样有用*", "at": "B02.same+1.6"},
+    {"text": "只是派活时，要更具体", "at": "B02.same+2.6"}]},
+  {"t": "statement", "at": "B02.rule", "w": 1500, "lines": [
+    {"text": "OpenAI Codex 文档：好提示的样子", "at": "B02.rule+0.1", "size": 44},
+    {"text": "A useful Codex prompt names the behavior you want, points to the relevant code or reproduction steps, preserves important constraints, and says how to verify the change.", "at": "B02.rule+0.8", "size": 42, "weight": 700, "cps": 40, "mt": 26, "color": "var(--ink)"}]},
+  {"t": "iconrow", "at": "B02.four", "size": 160, "gap": 60,
+   "title": {"text": "一句话，说清四件事", "at": "B02.four+0.1"},
+   "items": [
+    {"icon": "icon-park:aiming", "label": "要的效果", "at": "B02.four+0.4", "color": "m6"},
+    {"icon": "icon-park:file-search", "label": "相关代码", "sub": "或复现步骤", "at": "B02.four+1.8", "color": "m5"},
+    {"icon": "icon-park:lock", "label": "重要的约束", "at": "B02.four+3.6", "color": "m2"},
+    {"icon": "icon-park:check-correct", "label": "怎么验证", "at": "B02.four+5.2", "color": "m4"}],
+   "caption": {"text": "出处：OpenAI Codex 文档（截至 2026 年 9 月）", "at": "B02.four+6.2"}},
+
+  {"t": "steps", "at": "B03", "title": "派活清单", "w": 1200, "items": [
+    {"text": "目标：要什么结果", "at": "B03.list+1.2"},
+    {"text": "相关文件：改哪里、不改哪里", "at": "B03.i1+3.2"},
+    {"text": "约束：哪些不能碰", "at": "B03.i2+0.3"},
+    {"text": "验收标准：做到什么算完，用什么检查", "at": "B03.i2+2.4"},
+    {"text": "再加一条：做完要汇报", "at": "B03.plus+0.3"}]},
+
+  {"t": "chat", "at": "B04", "chapter": "例子一：团队网页", "title": "给 Codex 派活",
+   "people": {"l": {"name": "你", "icon": "icon-park:user", "color": "m5"}, "r": {"name": "Codex", "icon": "icon-park:robot", "color": "m6"}},
+   "messages": [{"side": "l", "text": "网站上加个新同事。", "at": "B04@网站上加", "typing": 0}],
+   "after": {"text": "先做道题：团队有个*介绍网页*", "at": "B04.pause+0.8"}},
+  {"t": "pause", "at": "B04.think", "q": "它拿到这句话，会卡在哪几个地方？", "revealAt": "B05.reveal",
+   "a": "至少这几处：*哪个页面、哪个文件？* 新同事叫什么、什么职位、*照片在哪？*"},
+  {"t": "statement", "at": "B05.w2", "mascot": "left", "icon": "icon-park:help", "lines": [
+    {"text": "其他人的卡片，能不能顺手调整？", "at": "B05.w2+0.1"}, {"text": "*加完怎么才算好？*", "at": "B05.w3"},
+    {"text": "它也许都能猜，可只要猜错一处", "at": "B05.w3+3"},
+    {"text": "你就得再返工一轮", "at": "B05.w3+5.5", "size": 50, "weight": 800, "color": "var(--m1-d)", "mt": 14}]},
+
+  {"t": "twocol", "at": "B06",
+   "left": {"title": "一句话", "tone": "m1", "at": "B06.good", "lines": [{"text": "网站上加个新同事。", "at": "B06.good+0.8"}]},
+   "right": {"title": "派活清单（示例）", "tone": "m6", "at": "B06.g1-0.4", "lines": [
+     {"text": "目标：加一位新成员李雷", "at": "B06.g1+0.2"},
+     {"text": "　　　产品经理，照片已放在", "at": "B06.g1+3"},
+     {"text": "　　　photos/li-lei.svg", "at": "B06.g1+5.2"},
+     {"text": "相关文件：只改 index.html", "at": "B06.g2+0.2"},
+     {"text": "约束：别的卡片和样式都不动", "at": "B06.g2+3.6"},
+     {"text": "验收：python3 check.py 通过", "at": "B06.g3+0.4"}]}},
+
+  {"t": "iconrow", "at": "B07", "chapter": "改哪里 · 约束 · 验收", "size": 180, "arrows": true,
+   "title": {"text": "先说「改哪里」", "at": "B07.where+0.1"},
+   "items": [
+    {"icon": "icon-park:folder-open", "label": "它能自己翻文件", "at": "B07.where+1.6", "color": "m5"},
+    {"icon": "icon-park:direction", "label": "你指个方向", "at": "B07.where+4", "color": "m6"},
+    {"icon": "icon-park:rocket", "label": "少走弯路", "sub": "也少费额度", "at": "B07.where+5.6", "color": "m4"}]},
+  {"t": "steps", "at": "B07.path", "title": "把「改哪里」告诉它（官方建议）", "w": 1300, "items": [
+    {"text": "命令行版：把文件路径写出来", "cmd": "相关文件：只改 index.html", "plain": true, "at": "B07.path+0.3"},
+    {"text": "输入 @，搜索文件、把路径插进去", "cmd": "@ind  →  index.html", "plain": true, "at": "B07.at+0.3"},
+    {"text": "编辑器插件：打开的文件会自动带上", "at": "B07.ide+0.3"}]},
+
+  {"t": "statement", "at": "B08", "mascot": "left", "icon": "icon-park:lock", "lines": [
+    {"text": "再说约束。官方示例的写法", "at": "B08.limits+0.1"}, {"text": "*不改接口的形状*", "at": "B08.limits+3"},
+    {"text": "改动尽量小，能加回归测试就加", "at": "B08.limits+5.4"},
+    {"text": "回归测试：防止老问题复发的测试", "at": "B08.limits+8.4", "size": 40, "weight": 700, "color": "var(--m6-d)", "mt": 14}]},
+  {"t": "statement", "at": "B08.office", "mascot": "left", "icon": "icon-park:people", "lines": [
+    {"text": "换成办公场景", "at": "B08.office+0.1"}, {"text": "*「别动其他人的卡片」*", "at": "B08.office+1.3"},
+    {"text": "「别换配色」", "at": "B08.office+3.4", "size": 64, "weight": 800, "color": "var(--ink)"}]},
+  {"t": "twocol", "at": "B08.cheat",
+   "left": {"title": "✗ 把结果写死", "tone": "m1", "at": "B08.cheat+0.2", "lines": [{"text": "只为让检查通过", "at": "B08.cheat+2.6"}]},
+   "right": {"title": "✓ 检查有问题，就告诉我", "tone": "m6", "at": "B08.cheat+4.6", "lines": [{"text": "写进约束里", "at": "B08.cheat+5.8"}]},
+   "bottom": {"text": "还有一条很实用的约束", "at": "B08.cheat+0.4"}},
+
+  {"t": "iconrow", "at": "B09", "size": 160, "gap": 60,
+   "title": {"text": "最容易漏掉的：验收标准", "at": "B09.verify+0.2"},
+   "items": [
+    {"icon": "icon-park:experiment", "label": "测试", "at": "B09.signal+1.2", "color": "m5"},
+    {"icon": "icon-park:checklist", "label": "检查脚本", "at": "B09.signal+2.2", "color": "m6"},
+    {"icon": "icon-park:hammer-and-anvil", "label": "成功构建", "at": "B09.signal+3.8", "color": "m2"},
+    {"icon": "icon-park:camera", "label": "截图对比", "at": "B09.signal+5.6", "color": "m4"}],
+   "caption": {"text": "给它一个*能自己检查结果*的办法", "at": "B09.signal+0.2"}},
+  {"t": "statement", "at": "B09.noship", "mascot": "left", "icon": "icon-park:flag", "lines": [
+    {"text": "Anthropic Claude Code 文档", "at": "B09.noship+0.1", "size": 44}, {"text": "*验证不了，就别上线*", "at": "B09.noship+1.4"},
+    {"text": "任务越长，越要写清", "at": "B09.done+0.2"},
+    {"text": "结果 · 约束 · 完成标准", "at": "B09.done+1.8", "size": 50, "weight": 800, "color": "var(--m6-d)", "mt": 14}]},
+
+  {"t": "chat", "at": "B10", "title": "派活提示的最后一句（示例）",
+   "people": {"l": {"name": "你", "icon": "icon-park:user", "color": "m5"}, "r": {"name": "Codex", "icon": "icon-park:robot", "color": "m6"}},
+   "messages": [{"side": "l", "text": "……做完请汇报：跑了哪些命令、结果如何、还有什么没验证到。", "at": "B10.report+2", "typing": 0}],
+   "after": {"text": "最后，*要求它汇报*", "at": "B10.report+0.4"}},
+  {"t": "statement", "at": "B10.why", "mascot": "left", "icon": "icon-park:attention", "lines": [
+    {"text": "OpenAI 提醒过", "at": "B10.why+2"}, {"text": "*失败了，也可能回一句「完成」*", "at": "B10.why+3.4", "size": 80},
+    {"text": "说的是改文件的工具", "at": "B10.why+5.4"}]},
+  {"t": "twocol", "at": "B10.trust",
+   "left": {"title": "只听它说", "tone": "m1", "at": "B10.trust+0.1", "lines": [{"text": "「好了！」", "at": "B10.trust+1"}]},
+   "right": {"title": "看它跑了什么、结果如何", "tone": "m6", "at": "B10.trust+2.2", "lines": [{"text": "跑了：python3 check.py", "at": "B10.trust+3.2"}, {"text": "结果：检查通过，共 5 位成员", "at": "B10.trust+4.2"}]}},
+
+  {"t": "terminal", "at": "B11", "rec": "r1", "title": "zsh — codex", "from": "mark:ready", "to": "mark:submit", "rows": [20, 29],
+   "label": "真实录屏：按*派活清单*交代任务",
+   "hi": [{"rows": [24, 26], "at": "B11.replay+5"}]},
+  {"t": "terminal", "at": "B11.work", "rec": "r1", "title": "zsh — codex", "from": "mark:submit", "to": "mark:report", "rows": [3, 23], "hold": 6, "maxH": 740, "y": -30,
+   "label": "它先读文件、改完*自己跑检查*，最后汇报",
+   "hi": [{"rows": [6, 9], "at": "B11@改了哪个文件", "until": "B11@跑了哪条命令"},
+          {"rows": [12, 13], "at": "B11@跑了哪条命令", "until": "B11@检查结果是什么"},
+          {"rows": [15, 19], "at": "B11@检查结果是什么"}]},
+
+  {"t": "statement", "at": "B12", "chapter": "例子二：销售表", "mascot": "left", "icon": "icon-park:table-file", "lines": [
+    {"text": "第二个例子：办公数据", "at": "B12.excel+0.1"}, {"text": "*整理销售表的小脚本*", "at": "B12.excel+2"},
+    {"text": "现在：按销售员汇总", "at": "B12.excel+4.4"}]},
+  {"t": "statement", "at": "B12.bad", "mascot": "left", "icon": "icon-park:help", "lines": [
+    {"text": "差的写法", "at": "B12.bad+0.1", "color": "var(--m1-d)"}, {"text": "*「把表格脚本改成按月份汇总。」*", "at": "B12.bad+0.8", "size": 72},
+    {"text": "日期是哪一列？结果存到哪？", "at": "B12.gap+0.2"},
+    {"text": "原来按人汇总的那张表还要不要？", "at": "B12.gap+2.8", "size": 46, "weight": 650, "mt": 12}]},
+  {"t": "steps", "at": "B13", "title": "好的写法（示例，自拟）", "w": 1560, "items": [
+    {"text": "目标", "cmd": "给 scripts/summarize.py 加上按月份汇总，另存为 output/summary_by_month.csv", "plain": true, "at": "B13.t1+0.2"},
+    {"text": "背景", "cmd": "数据在 data/sales.csv，日期列叫「日期」，格式如 2026-09-02", "plain": true, "at": "B13.t2+0.2"},
+    {"text": "约束", "cmd": "保留原来的按销售员汇总；不要安装新的软件包", "plain": true, "at": "B13.t2+4.6"},
+    {"text": "验收", "cmd": "拿 9 月的几行手算合计，和结果对上，把对照贴给我", "plain": true, "at": "B13.t3+0.2"}]},
+
+  {"t": "statement", "at": "B14", "mascot": "left", "icon": "icon-park:bug", "lines": [
+    {"text": "不是加功能，而是修问题", "at": "B14.bug+0.1"}, {"text": "*先复现，再修*", "at": "B14.bug+3.2"},
+    {"text": "官方：复现步骤和约束，比笼统的描述更重要", "at": "B14.repro+0.4", "size": 44}]},
+  {"t": "steps", "at": "B14.example", "title": "复现步骤（虚构的例子）", "w": 1300, "items": [
+    {"text": "运行汇总脚本", "cmd": "python3 scripts/summarize.py", "at": "B14.example+0.8"},
+    {"text": "打开月度汇总表", "cmd": "output/summary_by_month.csv", "plain": true, "at": "B14.example+2.4"},
+    {"text": "十月那一行是 0，可原表里十月明明有数据", "at": "B14.example+4.4"}]},
+  {"t": "iconrow", "at": "B15", "arrows": true, "size": 160,
+   "title": {"text": "然后交代顺序", "at": "B15.order+0.1"},
+   "items": [
+    {"icon": "icon-park:bug", "label": "本地复现", "at": "B15.order+1.6", "color": "m1"},
+    {"icon": "icon-park:search", "label": "找到原因", "at": "B15.order+3.2", "color": "m5"},
+    {"icon": "icon-park:repair", "label": "再改", "at": "B15.order+4.4", "color": "m2"},
+    {"icon": "icon-park:refresh", "label": "重跑同样步骤", "sub": "确认十月的数对了", "at": "B15.rerun+0.4", "color": "m6"}]},
+  {"t": "statement", "at": "B15.official", "w": 1500, "lines": [
+    {"text": "OpenAI Codex 文档示例", "at": "B15.official+0.1", "size": 40}, {"text": "Start by reproducing the bug locally, then propose a patch and run checks.", "at": "B15.official+0.8", "size": 46, "weight": 750, "cps": 30},
+    {"text": "*先在本地复现，再提出修改，再跑检查*", "at": "B15.official+3.4", "size": 60, "weight": 800, "color": "var(--ink)", "mt": 28}]},
+
+  {"t": "statement", "at": "B16", "chapter": "先出方案，一轮一件", "mascot": "left", "icon": "icon-park:box", "lines": [
+    {"text": "需求很大，自己还没想清楚？", "at": "B16.big+0.1"}, {"text": "*别让它直接动手*", "at": "B16.big+2"}]},
+  {"t": "steps", "at": "B16.plan", "title": "先让它出方案", "w": 1300, "items": [
+    {"text": "在 Codex 里输入", "cmd": "/plan", "plain": true, "see": "它先调查、提出方案，你看过再让它改", "at": "B16.plan+0.6"},
+    {"text": "还可以加一句", "cmd": "有影响方案的问题，先问我，最多 5 个。", "plain": true, "at": "B16.askme+0.3"}]},
+  {"t": "chat", "at": "B17", "title": "/plan 示例（自拟）",
+   "people": {"l": {"name": "你", "icon": "icon-park:user", "color": "m5"}, "r": {"name": "Codex", "icon": "icon-park:robot", "color": "m6"}},
+   "messages": [
+    {"side": "l", "text": "/plan 我想让团队网页支持中英文切换。", "at": "B17.planex+0.3", "typing": 0},
+    {"side": "l", "text": "先看看现在的文字都写在哪里，给我两种做法，以及各自要改哪些文件。", "at": "B17.scan+0.2", "typing": 0},
+    {"side": "l", "text": "先别改代码。", "at": "B17.nocode", "typing": 0}],
+   "after": {"text": "方案看过、问题答完，*再让它开工*", "at": "B17.review+0.4"}},
+  {"t": "statement", "at": "B18", "w": 1500, "lines": [
+    {"text": "为什么要特别说「先问我」？", "at": "B18.default+0.1", "size": 52}, {"text": "If some details are missing, make reasonable assumptions and complete a working version of the feature.", "at": "B18.bias+1.5", "size": 40, "weight": 700, "cps": 32, "mt": 26},
+    {"text": "*细节缺了，就做合理的假设*", "at": "B18.bias+7", "size": 64, "weight": 800, "color": "var(--ink)", "mt": 22},
+    {"text": "OpenAI Cookbook 公开的 Codex 系统提示样例", "at": "B18.bias+0.4", "size": 34}]},
+  {"t": "twocol", "at": "B18.explicit",
+   "left": {"title": "它的默认", "tone": "m1", "at": "B18.explicit+0.1", "lines": [{"text": "偏向先动手", "at": "B18.explicit+1"}]},
+   "right": {"title": "想让它先问", "tone": "m6", "at": "B18.explicit+2.4", "lines": [{"text": "得你明说：「先问我」", "at": "B18.explicit+3.2"}]}},
+
+  {"t": "statement", "at": "B19", "mascot": "left", "icon": "icon-park:shopping-bag", "lines": [
+    {"text": "另一个常见的坑", "at": "B19.one+0.1"}, {"text": "*一次塞太多*", "at": "B19.one+1.4"},
+    {"text": "修好汇总表 ＋ 改网页配色 ＋ 翻译说明文档", "at": "B19.combo+0.4", "size": 44},
+    {"text": "三件互不相干的事", "at": "B19.combo+5", "size": 46, "weight": 800, "color": "var(--m1-d)", "mt": 14}]},
+  {"t": "iconrow", "at": "B19.split", "size": 180, "gap": 80,
+   "title": {"text": "拆开，一轮只做一件", "at": "B19.split+0.1"},
+   "items": [
+    {"icon": "icon-park:table-file", "label": "修汇总表", "sub": "第 1 轮", "at": "B19.split+1.4", "color": "m5"},
+    {"icon": "icon-park:platte", "label": "改配色", "sub": "第 2 轮", "at": "B19.split+2.4", "color": "m2"},
+    {"icon": "icon-park:translate", "label": "翻译说明文档", "sub": "第 3 轮", "at": "B19.split+3.4", "color": "m4"}],
+   "caption": {"text": "OpenAI 观察：独立任务拆开，*效果最好*", "at": "B19.split+4.4"}},
+  {"t": "iconrow", "at": "B19.steer", "size": 190, "gap": 140,
+   "title": {"text": "它干活时", "at": "B19.steer+0.1"},
+   "items": [
+    {"icon": "icon-park:enter-key", "label": "回车：插话", "sub": "改这一轮的方向", "at": "B19.steer+0.8", "color": "m6"},
+    {"icon": "icon-park:sort-one", "label": "Tab：排队", "sub": "留给下一轮", "at": "B19.steer+3.4", "color": "m5"}]},
+
+  {"t": "chat", "at": "B20", "chapter": "AGENTS.md", "title": "每次派活，开头都一样",
+   "people": {"l": {"name": "你", "icon": "icon-park:user", "color": "m5"}, "r": {"name": "Codex", "icon": "icon-park:robot", "color": "m6"}},
+   "messages": [
+    {"side": "l", "text": "用中文回复；改完跑检查脚本；别动 photos 文件夹……", "at": "B20@用中文", "typing": 0},
+    {"side": "l", "text": "用中文回复；改完跑检查脚本；别动 photos 文件夹……", "at": "B20@用中文+2.6", "typing": 0},
+    {"side": "l", "text": "用中文回复；改完跑检查脚本；别动 photos 文件夹……", "at": "B20@用中文+5.2", "typing": 0}],
+   "after": {"text": "同样的话，*每次都要说一遍*", "at": "B20.pause2+0.6"}},
+  {"t": "pause", "at": "B20.ask2", "q": "有没有办法，只说一次？", "revealAt": "B21.agentsmd", "a": "有：写进 *AGENTS.md*"},
+  {"t": "statement", "at": "B21.readme", "w": 1500, "mascot": "left", "icon": "icon-park:book-open", "lines": [
+    {"text": "Think of AGENTS.md as a README for agents", "at": "B21.readme+0.3", "size": 44}, {"text": "*写给智能体看的 README*", "at": "B21.readme+2"},
+    {"text": "放构建步骤、测试命令和约定", "at": "B21.readme+5.4"},
+    {"text": "就像新同事的入职手册", "at": "B21.handbook+0.3", "size": 50, "weight": 800, "color": "var(--m6-d)", "mt": 14}]},
+  {"t": "iconrow", "at": "B21.who", "size": 140, "gap": 50,
+   "title": {"text": "多家一起推动的格式", "at": "B21.who+0.1"},
+   "items": [
+    {"icon": "icon-park:code", "label": "OpenAI Codex", "at": "B21@OpenAI Codex", "color": "m6"},
+    {"icon": "icon-park:terminal", "label": "Cursor", "at": "B21@Cursor", "color": "m4"},
+    {"icon": "icon-park:google", "label": "Google Jules", "at": "B21@Google", "color": "m2"},
+    {"icon": "icon-park:lightning", "label": "Amp", "at": "B21@Google+1", "color": "m5"},
+    {"icon": "icon-park:factory-building", "label": "Factory", "at": "B21@Google+1.8", "color": "m1"}],
+   "caption": {"text": "现由 Linux 基金会旗下的 *Agentic AI Foundation* 托管", "at": "B21.who+4.6"}},
+
+  {"t": "steps", "at": "B22", "title": "AGENTS.md 放在哪", "w": 1300, "items": [
+    {"text": "全局一份：对所有项目有效", "cmd": "~/.codex/AGENTS.md", "plain": true, "at": "B22.global+0.3"},
+    {"text": "项目一份：放在项目根目录", "cmd": "l05-team-hub/AGENTS.md", "plain": true, "at": "B22.project+0.3"},
+    {"text": "子文件夹里还可以再放一份（可选）", "cmd": "l05-team-hub/scripts/AGENTS.md", "plain": true, "at": "B22.project+3.6"}]},
+  {"t": "iconrow", "at": "B22.read", "arrows": true, "size": 180,
+   "title": {"text": "开工前，Codex 一路往下读", "at": "B22.read+0.1"},
+   "items": [
+    {"icon": "icon-park:home-two", "label": "全局", "sub": "~/.codex", "at": "B22.read+1.4", "color": "m5"},
+    {"icon": "icon-park:folder-open", "label": "项目根", "at": "B22.read+3", "color": "m6"},
+    {"icon": "icon-park:folder-code", "label": "当前文件夹", "at": "B22.read+4.8", "color": "m4"}],
+   "caption": {"text": "合计默认最多读 *32 KiB*（截至 2026 年 9 月）", "at": "B22.read+6"}},
+  {"t": "statement", "at": "B23", "mascot": "left", "icon": "icon-park:stamp", "lines": [
+    {"text": "规矩打架，听谁的？", "at": "B23.priority+0.1"}, {"text": "*离被改文件最近的优先*", "at": "B23.near+0.2", "size": 80},
+    {"text": "你在对话里明说的，又优先于所有文件", "at": "B23.chat+0.4"}]},
+  {"t": "statement", "at": "B23.inject", "mascot": "left", "icon": "icon-park:layers", "lines": [
+    {"text": "这些内容会作为消息，塞进给模型的请求里", "at": "B23.inject+0.1"}, {"text": "*模型会紧密遵守*", "at": "B23.inject+3.4"},
+    {"text": "它经过训练，专门这样做", "at": "B23.inject+5"}]},
+  {"t": "steps", "at": "B24", "title": "里面写什么？三类就够（示例，自拟）", "w": 1300, "items": [
+    {"text": "常用命令：怎么运行、怎么检查", "cmd": "检查团队页：python3 check.py　汇总：python3 scripts/summarize.py", "plain": true, "at": "B24.cmds+0.2"},
+    {"text": "规矩：哪些别动，什么要先问", "cmd": "不要修改 photos/ 里的图片；装新的软件包前，先问我", "plain": true, "at": "B24.rules+0.2"},
+    {"text": "沟通：怎么跟你汇报", "cmd": "用中文回复；改完运行 python3 check.py，并贴出结果", "plain": true, "at": "B24.talk+0.2"}]},
+  {"t": "statement", "at": "B25", "mascot": "left", "icon": "icon-park:scissors", "lines": [
+    {"text": "关键是", "at": "B25.short+0.1"}, {"text": "*写短、写准*", "at": "B25.short+0.8"},
+    {"text": "每次都要读：越长越占上下文、越费额度", "at": "B25.quota+0.8", "size": 44},
+    {"text": "Codex 官方省额度建议：精简 AGENTS.md", "at": "B25.quota+6", "size": 44, "weight": 800, "color": "var(--m6-d)", "mt": 14}]},
+  {"t": "statement", "at": "B25.sensitive", "mascot": "left", "icon": "icon-park:search", "lines": [
+    {"text": "OpenAI：新模型对这类指令更敏感", "at": "B25.sensitive+0.2"}, {"text": "*查过时的、查矛盾的*", "at": "B25.sensitive+4.2"},
+    {"text": "OpenAI GPT-6 指南（截至 2026 年 9 月）", "at": "B25.sensitive+1.4", "size": 34}]},
+
+  {"t": "terminal", "at": "B26", "rec": "r2", "title": "zsh — codex", "from": "mark:ready", "to": "mark:submit", "rows": [20, 29],
+   "label": "真实录屏：在项目里输入 */init*，回车",
+   "hi": [{"rows": [26, 26], "at": "B26.init+2.4"}]},
+  {"t": "terminal", "at": "B26.scan", "rec": "r2", "title": "zsh — codex", "from": "mark:submit", "to": "mark:report", "rows": [2, 23], "hold": 2.2, "maxH": 740, "y": -30,
+   "label": "它看一遍项目，写出一份 *AGENTS.md 草稿*",
+   "hi": [{"rows": [14, 17], "at": "B26.edit-1.6"}]},
+  {"t": "terminal", "at": "B26.edit", "rec": "r2", "title": "zsh — codex", "from": "mark:report", "to": "mark:report", "rows": [4, 23], "maxH": 740, "y": -30,
+   "label": "草稿是英文的：可以让它改成中文，*再审一遍*",
+   "hi": [{"rows": [14, 17], "at": "B26.edit+0.2"}, {"rows": [20, 21], "at": "B26.edit+2"}]},
+  {"t": "steps", "at": "B26.edit+5.2", "title": "审一遍，改成你们的规矩，再提交", "w": 1300, "items": [
+    {"text": "补上它不知道的规矩", "cmd": "- 不要修改 photos/ 里的图片", "plain": true, "at": "B26.edit+5.4"},
+    {"text": "提交保存", "cmd": "git add AGENTS.md && git commit -m \"加入 AGENTS.md\"", "at": "B26.edit+8.4"}]},
+
+  {"t": "mindmap", "at": "B27", "chapter": "小结", "center": "给智能体派活", "icon": "icon-park:checklist", "celebrateAt": "B28.bye",
+   "branches": [
+    {"label": "派活清单", "sub": "四项清单 ＋ 做完汇报", "icon": "icon-park:list-checkbox", "at": "B27.m1"},
+    {"label": "修问题", "sub": "先复现，改完重跑", "icon": "icon-park:bug", "at": "B27.m2"},
+    {"label": "大需求", "sub": "/plan · 先问我 · 一轮一件", "icon": "icon-park:box", "at": "B27.m3"},
+    {"label": "AGENTS.md", "sub": "写下规矩，/init 起草", "icon": "icon-park:book-open", "at": "B27.m4"}],
+   "next": {"text": "下一节：*认识 Codex：选对入口，装好它*", "at": "B28.l6"}}
+ ]}

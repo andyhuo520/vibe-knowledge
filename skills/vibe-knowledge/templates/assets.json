@@ -1,0 +1,10 @@
+{
+ "_how": "每期的 Renoise 资产清单。先填 items → 按 references/04-renoise.md 选模型、写提示词 → estimate_cost 报价 → 用户在对话里确认 → create_tasks → wait_tasks → download_results → 按 file 改名放好。status: plan / approved / done / dropped。",
+ "style_prefix": "统一画风前缀（每张图提示词开头都带上，保证整期一个味道）",
+ "items": [
+  {"id": "a01", "kind": "image", "use": "B01 冷开场全屏底图", "model": "mj-v8.2", "ratio": "16:9", "prompt": "", "file": "img/a01.jpg", "status": "plan"},
+  {"id": "v01", "kind": "video", "use": "B09 主视觉动态镜头（从 a05 首帧起）", "model": "seedance-2.5-byteplus", "ratio": "16:9", "duration": 8, "resolution": "720p", "first_frame": "task:a05", "prompt": "", "file": "clips/v01.mp4", "status": "plan"},
+  {"id": "m01", "kind": "audio", "use": "全片配乐", "model": "lyria-pro", "prompt": "", "file": "audio/score.wav", "status": "plan"},
+  {"id": "s01", "kind": "audio", "use": "B07 揭晓的钟声", "model": "eleven-sfx-v2", "duration": 3, "prompt": "", "file": "audio/sfx_bell.wav", "status": "plan"}
+ ]
+}
