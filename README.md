@@ -112,8 +112,12 @@ skills/ai-teardown/      cine 引擎（three.js 逐帧渲染）、字体、图�
 docs/                    README 用的封面、风格墙、动图、试听音频
 ```
 
+## 致谢
+
+做这个项目时参考过 lemo-opuscar、huashu-art-motion、paper2video、Paper-Cut、LuZhong-Li/vibe-knowledge-video-skill、earshot 等开源项目。每个项目参考了什么、用在哪里、什么许可证，都列在 [ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md)。如有不准确的地方，欢迎开 issue，我们会及时更正。
+
 ## 许可
 
-代码以 [MIT](LICENSE) 开源。示例视频、AI 生成的配图和动态镜头、默认 BGM 与默认音色的说明见 [NOTICE.md](NOTICE.md)；第三方组件见 [THIRD_PARTY.md](THIRD_PARTY.md)。
+代码以 [MIT](LICENSE) 开源。示例视频、AI 生成的配图和动态镜头、默认 BGM 与默认音色的说明见 [NOTICE.md](NOTICE.md)；第三方组件见 [THIRD_PARTY.md](THIRD_PARTY.md)；参考过的开源项目见 [ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md)。
 
 作者 [@Berryxia](https://x.com/berryxia) · 用 Claude Code（Claude Opus）编排制作

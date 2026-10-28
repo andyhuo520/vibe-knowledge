@@ -75,6 +75,10 @@ cp -R vibe-knowledge/skills/vibe-knowledge vibe-knowledge/skills/ai-teardown ~/.
 
 Requirements: a Python with `numpy scipy pillow playwright` (set `CINE_PY`), `ffmpeg`, macOS Vision + `swiftc` for OCR QA, a Xiaomi MiMo key in `MIMO_API_KEY` or `~/.config/ai-teardown/mimo.env`, and optionally the Renoise MCP for the enhanced tier. Then ask Claude Code: *"Make a Vibe knowledge episode: why does the digit 1 give fake books away?"*
 
+## Acknowledgements
+
+We studied and learned from open-source projects including lemo-opuscar, huashu-art-motion, paper2video, Paper-Cut, LuZhong-Li/vibe-knowledge-video-skill and earshot. What we took from each one, where it is used and under which licence are listed in [ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md). Corrections are welcome via issues.
+
 ## License
 
 Code: [MIT](LICENSE). Sample videos, AI imagery, default BGM and voice: see [NOTICE.md](NOTICE.md). Third-party components: [THIRD_PARTY.md](THIRD_PARTY.md).
