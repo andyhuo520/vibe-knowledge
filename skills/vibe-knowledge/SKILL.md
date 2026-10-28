@@ -52,7 +52,7 @@ python3 ~/.claude/skills/vibe-knowledge/tools/new_film.py <期号> --template A 
 S=~/Desktop/vibe-knowledge/examples/vk; L=$S/lessons/<期号>
 ```
 
-依赖：ai-teardown skill（cine 引擎、make_lesson 配音）、`CINE_PY`（numpy scipy pillow playwright 的 Python；本机是 `/usr/local/bin/python3.12`，跑之前 `PYTHONPATH=` 清空，否则会加载坏掉的 PIL）、MiMo 密钥 `~/.config/ai-teardown/mimo.env`、Renoise MCP、ffmpeg、swiftc（OCR）。
+依赖：ai-teardown skill（cine 引擎、make_lesson 配音）、`CINE_PY`（numpy scipy pillow playwright 的 Python；本机是 `/usr/local/bin/python3.12`，跑之前 `PYTHONPATH=` 清空，否则会加载坏掉的 PIL）、MiMo 密钥 `~/.config/ai-teardown/mimo.env`、Renoise MCP（只有增强档需要；缺的话按 references/04-renoise.md「接入 Renoise」一节引导，注册链接原样给 https://renoise.ai/mcp?utm_medium=xcom&utm_source=official ）、ffmpeg、swiftc（OCR）。
 
 ## 流水线（三个确认点）
 

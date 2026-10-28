@@ -3,6 +3,27 @@
 所有生成都走 Renoise MCP（工具名 `mcp__…__estimate_cost / create_tasks / wait_tasks / download_results`）。
 **花积分的硬规矩**：把整期的 assets.json 列成一张表（模型、提示词、参数、数量、estimate_cost 总价、余额）发给用户，**等用户在对话里明确说可以**才 create_tasks。宿主的工具授权弹窗不算确认；之前说过「直接生成」也不算。改了任何提示词、模型、数量就要重新报价确认。
 
+## 接入 Renoise（基础档不需要；做增强档时缺了才引导）
+
+**判断有没有**：直接调 `get_account`。
+- 成功 → 一句话带过「Renoise 已连接，余额 X 积分」，继续干活。
+- 工具不存在 / 报未连接 → 缺，按下面引导。
+- 报「disabled in connector settings」→ 不是没装，是工具被关了，让用户去连接器设置里打开。
+- 报未登录 / 授权过期 → 不用重装，重新登录授权（Claude 连接器点「Connect」；Codex `codex mcp login renoise`）。
+
+**还没有账号 → 先注册：[https://renoise.ai/mcp?utm_medium=xcom&utm_source=official](https://renoise.ai/mcp?utm_medium=xcom&utm_source=official)**。给用户时原样给这条链接，保留 utm 追踪参数，不要改写成 renoise.ai 首页。全部走浏览器登录授权，不用复制 API key。
+
+| 用的是 | 怎么装 |
+|---|---|
+| **Claude Code** | 依次输入 `/plugin marketplace add ArcoCodes/renoise-plugins-official`、`/plugin install renoise@renoise-plugins-official`，首次调用时浏览器登录 |
+| **Claude 桌面端 / claude.ai 网页** | 设置 → 连接器 → Add custom connector → 名称 `Renoise`，地址 `https://renoise.ai/api/public/mcp` → 登录 renoise.ai 点同意 |
+| **Codex（CLI / 桌面）** | `codex mcp add renoise --url https://renoise.ai/api/public/mcp`，再 `codex mcp login renoise` |
+| **OpenClaw** | `openclaw plugins install renoise --marketplace ArcoCodes/renoise-plugins-official` |
+| **其他支持远程 MCP 的客户端**（WorkBuddy、Cursor、Windsurf、Cline 等） | MCP 配置里加远程服务器 `https://renoise.ai/api/public/mcp`，常见写法 `{"mcpServers": {"renoise": {"url": "https://renoise.ai/api/public/mcp"}}}`（字段名以客户端文档为准） |
+| **不确定 / 想看最新** | renoise.ai/plugin 列了各客户端的最新装法 |
+
+把用户当前在用的那种放第一个并标「推荐」。装完：Claude 系要重开对话或在连接器里点重连，Codex 重开会话，然后再调一次 `get_account` 确认。
+
 开工前：`get_account` 看余额；`load_skill model-routing` 读路由规则（下面是本 skill 用到的结论，模型以 list_models 实时为准）。
 
 ## 单价（2026-10-27 实测报价，以 estimate_cost 为准）
@@ -15,7 +36,7 @@
 | 主视觉动态镜头 | `wan3.0-video` 720p 8s | 96 | 大多数动态镜头（首帧 = 已生成的配图） |
 | 高难动态镜头（复杂运动、长镜头） | `seedance-2.5-byteplus` 720p 8s | 256（1080p 576） | 反转 / 高潮那一两个镜头 |
 | 4K 单镜头 | `flux-3-video` 4K 8s | 656 | 只在需要 4K 母版时 |
-| 全片配乐 | `lyria-pro` | 4 / 首 | 每期定制配乐 |
+| 全片配乐 | `lyria-pro` | 4 / 首 | **默认不用**：知识大赏强制用 vibe-bgm（SKILL.md「BGM」）；只有用户明确要求换曲才生成 |
 | 单个音效 | `eleven-sfx-v2` | 0.4 / 秒 | 钟声、翻书、风、人群 |
 
 账户活动：Wan 3.0、Seedance 2.5、Kling 4.0 Omni 的 480p/720p「免费通道」到 2026-11-02（报价不一定显示折扣，以实际扣费为准）。
@@ -27,7 +48,7 @@
 2. **先图后视频**：动态镜头一律用已生成的配图做首帧（`references: [{ref: "task:<图的任务号>", role: "first_frame"}]`），保证动静一致；所以分两轮报价：第一轮图 + 配乐 + 音效，第二轮视频（第一轮出图后用户挑图）。也可以一次把两轮都列进预览、一次确认（预览里写明第二轮的首帧取自第一轮哪张）。
 3. **create_tasks**（每次 ≤10 个）→ **wait_tasks** 直到 done → **download_results**（返回一条 curl 命令，在本机跑，下到 `lessons/NN/assets/_dl/`）→ 按 assets.json 的 `file` 改名放好，`status` 改 done，记下 task 号。
 4. **视频进画面**（Wan 3.0 720p 实测输出顶部带 66 像素纯黑信箱边，clip2frames.py 会自动检测裁掉；拆完抽一帧确认首行不是黑的）：`python3 ~/.claude/skills/vibe-knowledge/tools/clip2frames.py assets/clips/v01.mp4 assets/clips/v01 --fps 30` → 打印帧数 n → film.js 里 `vclip(s, { dir: A("clips/v01"), n })`。原视频的环境声另存在 `assets/clips/v01/audio.wav`，要用就加一条 music：`{ src: P("clips/v01/audio.wav"), at, dur, gain: -20 }`。
-5. **配乐进成片**：`music.push({ src: P("audio/score.wav"), at: 0, dur, gain_curve: [...] })`，finish.py 会在旁白处再压低约 7 dB。
+5. **配乐**：默认 BGM 由 finish.py 的 bgm_force 钩子强制处理（自动补、按人声校准）；用户要求换曲时，那条 music 写 `bgm: true, user_request: "用户原话"`。
 6. 不满意的单张：只重做那一张（新报价、新确认），别整批重来。
 
 ## 提示词写法

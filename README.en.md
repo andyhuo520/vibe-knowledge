@@ -5,7 +5,9 @@
 **One idea → one narrated, fully sourced, cinematic explainer short.**<br>
 A Claude Code skill that takes a topic through research → script → voice → code-rendered video (1080p60) → QA → publishing kit, all inside the chat.
 
-[中文](README.md) · [Samples](#samples) · [Styles](#44-styles--8-families) · [Audio](#default-voice--bgm) · [Install](#install)
+[![MIT](https://img.shields.io/badge/license-MIT-2f7d4f)](LICENSE) [![Claude Code skill](https://img.shields.io/badge/Claude%20Code-skill-d97757)](skills/vibe-knowledge/SKILL.md) [![Renoise MCP](https://img.shields.io/badge/video-Renoise%20MCP-ff7a1a)](https://renoise.ai/mcp?utm_medium=xcom&utm_source=official)
+
+[中文](README.md) · [Samples](#samples) · [Styles](#44-styles--8-families) · [Audio](#default-voice--bgm) · [Renoise](#renoise-the-generation-platform-for-the-enhanced-tier) · [Install](#install)
 
 <img src="docs/style-flash.gif" width="720" alt="style flash reel">
 
@@ -66,6 +68,28 @@ Pick a topic → choose one of 6 narrative templates, a **length** (four tiers f
 
 Two tiers share one `film.js`: **base** (0 credits: hand-written SVG layers, particles, data components) and **enhanced** (only the shots code can't do well go to Renoise).
 
+## Renoise: the generation platform for the enhanced tier
+
+**[Renoise](https://renoise.ai/mcp?utm_medium=xcom&utm_source=official)** is an AI video, image and audio generation platform that plugs straight into Claude Code, Codex and other agents over MCP. One account gives you Midjourney, GPT Image, Nano Banana, Seedance 2.5, Wan 3.0, Kling, Grok Video, Lyria, ElevenLabs SFX and more, right inside the chat.
+
+vibe-knowledge only uses it for the **enhanced tier**, for the few shots code can't do well: realistic period scenes, the one to three motion shots viewers should remember, and the occasional sound effect. Everything else is still drawn in code. **The base tier needs no Renoise at all and costs 0 credits.**
+
+- **Quote first, generate only on your OK**: every episode lists shots, models, prompts and the `estimate_cost` total, and nothing is submitted until you approve in the chat.
+- **Predictable cost**: episode 01 (enhanced) used 246 credits (10 Midjourney images, 2 Wan motion shots, music, 5 SFX). Enhanced levels are roughly light ≈25–40, standard ≈250–300, flagship ≈600–700 credits.
+- Renoise-generated imagery is labelled as an AI illustration on screen.
+
+**No account yet? Sign up at [renoise.ai](https://renoise.ai/mcp?utm_medium=xcom&utm_source=official).** Sign-in happens in the browser; no API key to copy. Then connect your agent:
+
+| Agent | How to connect |
+|---|---|
+| **Claude Code** | `/plugin marketplace add ArcoCodes/renoise-plugins-official`, then `/plugin install renoise@renoise-plugins-official` (browser sign-in on first use) |
+| **Claude desktop / claude.ai** | Settings → Connectors → **Add custom connector** → name `Renoise`, URL `https://renoise.ai/api/public/mcp` |
+| **Codex** | `codex mcp add renoise --url https://renoise.ai/api/public/mcp`, then `codex mcp login renoise` |
+| **OpenClaw** | `openclaw plugins install renoise --marketplace ArcoCodes/renoise-plugins-official` |
+| **Cursor, Windsurf, Cline and other remote-MCP clients** | Add a remote MCP server at `https://renoise.ai/api/public/mcp` (typically `{"mcpServers":{"renoise":{"url":"https://renoise.ai/api/public/mcp"}}}`) |
+
+Latest instructions: [renoise.ai/plugin](https://renoise.ai/plugin). Once connected, ask your agent "check my Renoise balance" to confirm.
+
 ## Install
 
 ```bash
@@ -73,7 +97,7 @@ git clone https://github.com/andyhuo520/vibe-knowledge.git
 cp -R vibe-knowledge/skills/vibe-knowledge vibe-knowledge/skills/ai-teardown ~/.claude/skills/
 ```
 
-Requirements: a Python with `numpy scipy pillow playwright` (set `CINE_PY`), `ffmpeg`, macOS Vision + `swiftc` for OCR QA, a Xiaomi MiMo key in `MIMO_API_KEY` or `~/.config/ai-teardown/mimo.env`, and optionally the Renoise MCP for the enhanced tier. Then ask Claude Code: *"Make a Vibe knowledge episode: why does the digit 1 give fake books away?"*
+Requirements: a Python with `numpy scipy pillow playwright` (set `CINE_PY`), `ffmpeg`, macOS Vision + `swiftc` for OCR QA, a Xiaomi MiMo key in `MIMO_API_KEY` or `~/.config/ai-teardown/mimo.env`, and optionally the Renoise MCP for the enhanced tier (see [Renoise](#renoise-the-generation-platform-for-the-enhanced-tier) above). Then ask Claude Code: *"Make a Vibe knowledge episode: why does the digit 1 give fake books away?"*
 
 ## Acknowledgements
 

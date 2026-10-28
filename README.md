@@ -5,7 +5,9 @@
 **一个知识点 → 一条有旁白、每句有出处的精品知识短片。**<br>
 Claude Code skill：选题 → 查证 → 写稿 → 配音 → 代码成片 → 1080p60 → 质检 → 发布包，全程在对话里完成。
 
-[English](README.en.md) · [看样片](#看样片) · [风格库](#风格库44-套--8-个家族) · [听一听](#听一听默认音色与-bgm) · [安装](#安装)
+[![MIT](https://img.shields.io/badge/license-MIT-2f7d4f)](LICENSE) [![Claude Code skill](https://img.shields.io/badge/Claude%20Code-skill-d97757)](skills/vibe-knowledge/SKILL.md) [![Renoise MCP](https://img.shields.io/badge/video-Renoise%20MCP-ff7a1a)](https://renoise.ai/mcp?utm_medium=xcom&utm_source=official)
+
+[English](README.en.md) · [看样片](#看样片) · [风格库](#风格库44-套--8-个家族) · [听一听](#听一听默认音色与-bgm) · [Renoise](#renoise增强档的生成平台) · [安装](#安装)
 
 <img src="docs/style-flash.gif" width="720" alt="风格快闪片">
 
@@ -85,6 +87,28 @@ Claude Code skill：选题 → 查证 → 写稿 → 配音 → 代码成片 →
 
 **六种母版**：猜谜概念片、两难选择片、痛点原理片、一条主线片、闯关片、六面轮转片（`references/01-templates.md`）。
 
+## Renoise：增强档的生成平台
+
+**[Renoise](https://renoise.ai/mcp?utm_medium=xcom&utm_source=official)** 是一个 AI 视频、图片、音频生成平台，通过 MCP 直接接进 Claude Code、Codex 等 Agent。一个账号就能用 Midjourney、GPT Image、Nano Banana、Seedance 2.5、Wan 3.0、Kling、Grok Video、Lyria、ElevenLabs 音效等模型，在对话里直接生成。
+
+在 vibe-knowledge 里，Renoise 只负责**增强档**里代码做不好的那几个镜头：写实的时代场景配图、最需要被记住的 1–3 个动态镜头、个别音效。其余画面照样用代码画。**基础档完全不需要 Renoise，0 积分就能出片。**
+
+- **先报价、你点头才生成**：每一期都会把要生成的镜头、模型、提示词和 `estimate_cost` 总价列给你，你在对话里明确同意才提交。
+- **花多少心里有数**：第 01 期《商鞅立木》增强版用了 246 积分（10 张 Midjourney 配图 + 2 个 Wan 动态镜头 + 配乐 + 5 个音效）；增强档一般在轻 ≈25–40 / 标准 ≈250–300 / 旗舰 ≈600–700 积分。
+- **片中标注**：Renoise 生成的画面都会标「AI 示意」。
+
+**还没有账号？先到 [renoise.ai](https://renoise.ai/mcp?utm_medium=xcom&utm_source=official) 注册**。登录都在浏览器里完成，不用复制任何 API key。然后按你用的 Agent 接入：
+
+| 用的是 | 怎么接 |
+|---|---|
+| **Claude Code** | 依次输入 `/plugin marketplace add ArcoCodes/renoise-plugins-official`、`/plugin install renoise@renoise-plugins-official`，首次调用时浏览器登录 |
+| **Claude 桌面端 / claude.ai** | 设置 → 连接器 → **Add custom connector** → 名称 `Renoise`，地址 `https://renoise.ai/api/public/mcp` |
+| **Codex** | `codex mcp add renoise --url https://renoise.ai/api/public/mcp`，再 `codex mcp login renoise` |
+| **OpenClaw** | `openclaw plugins install renoise --marketplace ArcoCodes/renoise-plugins-official` |
+| **WorkBuddy、Cursor、Windsurf、Cline、豆包、千问、纳米Work……** | 添加远程 MCP 服务器，地址 `https://renoise.ai/api/public/mcp`（常见配置：`{"mcpServers":{"renoise":{"url":"https://renoise.ai/api/public/mcp"}}}`） |
+
+官方最新装法：[renoise.ai/plugin](https://renoise.ai/plugin)。装好后问 Agent 一句「查一下我的 Renoise 余额」，能查到就接通了。
+
 ## 安装
 
 ```bash
@@ -96,7 +120,7 @@ cp -R vibe-knowledge/skills/vibe-knowledge vibe-knowledge/skills/ai-teardown ~/.
 - 渲染用的 Python：`python3 -m venv ~/.venvs/cine && ~/.venvs/cine/bin/pip install numpy scipy pillow playwright && ~/.venvs/cine/bin/python -m playwright install chromium-headless-shell`，再 `export CINE_PY=~/.venvs/cine/bin/python`。
 - `ffmpeg`；OCR 质检用 macOS 自带的 Vision（需要 `swiftc`）。
 - 配音：小米 MiMo，密钥放 `MIMO_API_KEY` 环境变量或 `~/.config/ai-teardown/mimo.env`（**不要写进项目文件**）。默认音色是仓库自带的 AI 声音；想用自己的声音：`new_film.py --voice-ref 你的录音.wav`（只用你本人或已获授权的声音）。
-- 增强档（可选）：[Renoise MCP](https://renoise.ai/mcp?utm_medium=xcom&utm_source=official)。
+- 增强档（可选）：[Renoise MCP](https://renoise.ai/mcp?utm_medium=xcom&utm_source=official)，注册和接入见上面的 [Renoise](#renoise增强档的生成平台) 一节。
 
 然后在 Claude Code 里说：
 
